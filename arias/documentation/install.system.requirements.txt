@@ -1,0 +1,30 @@
+ARIA Installation Requirements
+
+For Microsoft Windows NT Server 4.0 or Microsoft Windows 2000 Advanced Server
+Minimum requirements
+.	Intel Pentium 200 MHz or equivalent
+.	32 MB Ram (128 MB for 2K Adv. Srv.)
+.	75 MB free disk space
+
+Recommended
+.	Intel Pentium III 500 MHz or higher
+.	128 MB ram or higher (or 64 MB +2 MB/user free prior to install)
+.	1 GB or more free disk space (or 100 MB +25 MB/user free prior to install)
+
+For Redhat Linux 7.1 (other linux and unix.s are similar)
+Minimum requirements
+.	Intel Pentium 200 MHz or equivalent
+.	32 MB Ram (64 MB or more if running X window)
+.	150 MB free disk space
+
+Recommended
+.	Intel Pentium III 500 MHz or higher
+.	128 MB ram or higher (or 64 MB +2 MB/user free prior to install)
+.	1 GB or more free disk space (or 100 MB +25 MB/user free prior to install)
+
+Client Workstations
+A JavaScript capable web browser is required.  CPU and RAM will directly effect the workstation.s HTML rendering speed, however there are no set minimum requirements.  The network connection to the server will also effect the software.s response times.  An ADOBE PDF viewer is required for certain portions of the software.
+
+Installation Tips
+ARIA (and its third party components) will make excellent use of multi-processor (SMP) systems.  Systems with enough RAM can cache the ARIA software and database files, resulting in higher performance.  Using hard disks with higher transfer rates (SCSI) can increase performance, especially on systems with large databases.
+

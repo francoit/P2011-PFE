@@ -1,0 +1,199 @@
+A.navlinks { 
+	color: #D3EAFF;
+	text-decoration: none; 
+	line-height: 1.2em;
+	}
+
+A.navlinks:hover { 
+	background-color:#ccddff;
+	color: #2233dd;
+	text-decoration: none; 
+	line-height: 1.2em;
+	}
+
+
+A.menu { 
+	color: #000000; 
+	text-decoration: none; 
+	line-height: 1.2em;
+	font-size: 12px;
+	}
+
+A.menu:hover { 
+	background-color: #FFFFFF;
+	color: #21476B; 
+	text-decoration: none; 
+	font-size: 12px;
+	}
+
+A { 
+	color: #1D2399; 
+	text-decoration: none; 
+  }
+
+A:hover { 
+	color: #0000FF; 
+	text-decoration: none; 
+	background-color:#ccddff;
+	}
+
+A:hover.blacklink { 
+	color: #333333; 
+	text-decoration: underline; 
+	}
+
+A.mainmenu {
+   FONT-FAMILY: Verdana, Tahoma, sans-serif;
+   text-decoration: none; 
+   font-size : 12px;
+  } 
+
+.whitelink { 
+	color:#FFFFFF; 
+	text-decoration: underline; 
+	}
+
+.blacklink { 
+	color:#000000; 
+	text-decoration: underline; 
+	}
+
+.boxborder { 
+	border-color: #000000;
+	border-style: solid; 
+	border-width: 1; 
+	}
+
+TD.explanation { 
+	margin: 40px;
+    font-size: 12px;
+	}
+
+DIV.texttitle { 
+	margin: 0;
+    font-size: 16px;
+	text-align: center;
+	background-color: #456481;
+	color: #FFFFFF; 
+	padding-left: 4px;
+	padding-right: 4px;
+	font-weight: 500;
+	}
+
+TH.explanationheader { 
+	margin: 0;
+    font-size: 16px;
+	text-align: center;
+	background-color: #456481;
+	padding: 2px;
+	}
+
+TD.datetime  {
+	text-align:center;
+}
+
+TD.footer { 
+	margin: 0;
+    font-size: xx-small;
+	text-align: center;
+	}
+
+TD {
+   FONT-FAMILY: Verdana, Tahoma, sans-serif;
+   font-size: small;
+   text-align: left;
+   }
+
+TH { 
+	background-color: #4682b4;
+	color: #FFFFFF; 
+	padding-left: 4px;
+	padding-right: 4px;
+	font-size: small;
+	}
+
+P.menu {
+	text-align: center;
+	font-size: xx-small;
+	color: #CCCCCC;
+}
+
+DIV.navlinks {
+	background-color: #547492;
+	font-size: xx-small;
+	color: #FFFFFF;
+}
+
+BODY { 
+	margin:5px;
+	scrollbar-shadow-color: #000000; 
+	scrollbar-highlight-color: #CCCCCC; 
+	scrollbar-3dlight-color: #6699cc; 
+	scrollbar-darkshadow-color: #000000; 
+	scrollbar-track-color: #6699cc; 
+	scrollbar-arrow-color:#000000; 
+    FONT-FAMILY: Verdana, Tahoma, sans-serif;
+    font-size : 14px;
+	}
+
+BODY.menu { 
+	margin:2px;
+	background-color: #336699; 
+	color: #000000; 
+    FONT-FAMILY: Verdana, Tahoma, sans-serif;
+    font-size : 14px;
+	}
+
+.hidden { 
+	background-color: #FFFF00; 
+	color: #000000; 
+	position: absolute; 
+	visibility: hidden; 
+	border-width: 1; 
+	width: 200; 
+	zIndex: 5; 
+	}
+
+.tooltip { 
+	background-color: #FFFF00; 
+	color: #000000; 
+	zIndex: 5; 
+	}
+
+FORM {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	}
+
+TABLE {
+	border: none;
+	border-style: none;
+	}
+
+.dateandtime  {
+	background-color: #336699;
+	text-align: center;
+	border: 0;
+    font-size: xx-small;
+	color: #DDDDDD;
+}
+
+INPUT  {
+    font-size : small;
+    BORDER-BOTTOM-COLOR: #111111;
+    BORDER-BOTTOM-WIDTH: 1px;
+    BORDER-LEFT-COLOR: #111111;
+    BORDER-LEFT-WIDTH: 1px;
+    BORDER-RIGHT-COLOR: #111111;
+    BORDER-RIGHT-WIDTH: 1px;
+    BORDER-TOP-COLOR: #111111;
+    BORDER-TOP-WIDTH: 1px;
+    COLOR: #111111;
+    FONT-FAMILY: Verdana, Tahoma, sans-serif;
+    FONT-WEIGHT: normal;
+}
+
+SELECT  {
+    font-size : x-small;
+}

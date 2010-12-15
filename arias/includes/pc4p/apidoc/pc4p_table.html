@@ -1,0 +1,889 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- Generated with PHPDoc, http://www.phpdoc.de -->
+<html>
+<head>
+	<title>PC4P - pc4p - Class: pc4p_table</title>
+	<link href="phpdoc.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<table width="100%" border="0">
+	<tr>
+		<td align="left" valign="top" bgcolor="#B0BAFF">			
+			<table width="100%">
+				<tr>
+					<td align="left" valign="top"><a href="phpdoc_packagelist.html">Packageindex</a></td>
+					<td align="left" valign="top"><a href="phpdoc_classtree.html">Classtrees</a></td>
+					<td align="left" valign="top"><a href="phpdoc_modulegroup.html">Modulegroups</a></td>
+					<td align="left" valign="top"><a href="phpdoc_elementlist.html">Elementlist</a></td>
+					<td align="left" valign="top"><a href="phpdoc_warnings.html">Report</a></td>
+					<td align="left" valign="top"><a href="phpdoc_xmlfiles.html">XML Files</a></td>
+				</tr>
+			</table>	
+		</td>
+	</tr>
+	<tr>	
+		<td height="20" align="left" valign="top"><hr></td>
+	</tr>
+	<tr>
+		<td align="left" valign="top">			
+			File: <a href="file:///data/customers/alex/htdocs/include/pc4p_table.inc" target="_new">/data/customers/alex/htdocs/include/pc4p_table.inc</a>
+			<h5>PC4P - pc4p</h5>
+			<h1>pc4p_table</h1>
+			<a href="pc4p_object.html">pc4p_object</a><br>&nbsp;&nbsp; |<br>&nbsp;&nbsp;+-- pc4p_table<br>
+			<p>
+			Table object provides table-functionality
+			<p>
+			&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="top">
+			<h4>private    class pc4p_table extends <a href="pc4p_object.html">pc4p_object</a></h4>
+			Table object provides table-functionality
+			<br>
+			
+			<p>
+			<table>
+				
+				
+				<tr><td align="left" valign="top">Authors</td><td align="left" valign="top">Alexander Wirtz &lt;<a href="mailto:wirtz@web-active.com">wirtz@web-active.com</a>&gt;</td></tr>
+				
+				
+				
+				
+				
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="10" align="left" valign="top">&nbsp;</td>
+	</tr>
+	
+	<tr>
+		<td height="20" align="left" valign="top"><hr></td>
+	</tr>
+	
+	<tr>
+		<td align="left" valign="top">
+			<table width="100%" border="0">
+				<tr>
+					<td align="left" valign="top"><h3>Methods inherited from pc4p_object</h3></td>
+				</tr>
+				<tr>
+					<td align="left" valign="top"><a href="pc4p_object.html#function_pc4p_object">pc4p_object</a>, <a href="pc4p_object.html#function_pc4p_set_margin">pc4p_set_margin</a>, <a href="pc4p_object.html#function_pc4p_set_width">pc4p_set_width</a>, <a href="pc4p_object.html#function_pc4p_set_alignment">pc4p_set_alignment</a>, <a href="pc4p_object.html#function_pc4p_set_textleading">pc4p_set_textleading</a>, <a href="pc4p_object.html#function_pc4p_draw">pc4p_draw</a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	
+	
+	<tr>
+		<td align="left" valign="top">		
+			<table width="100%" border="0">
+				<tr>
+					<td colspan="2" align="left" valign="top"><h2>Public Method Summary</h2></td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">void</td>
+					<td align="left" valign="top" width="100%"><a href="#function_pc4p_table()"><h4>pc4p_table(object pc4p_page &$parent)</h4></a>Constructor</td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">void</td>
+					<td align="left" valign="top" width="100%"><a href="#function_pc4p_create_tablematrix()"><h4>pc4p_create_tablematrix(integer $colsize, [ integer $rowsize, array $colnames, array $rownames ])</h4></a>Creates the table and sets the names for columns and rows</td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">void</td>
+					<td align="left" valign="top" width="100%"><a href="#function_pc4p_add_tablerow()"><h4>pc4p_add_tablerow([ string $rowname ])</h4></a>Adds a row to the table</td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">void</td>
+					<td align="left" valign="top" width="100%"><a href="#function_pc4p_set_tablecolsize()"><h4>pc4p_set_tablecolsize(array $colsize)</h4></a>Sets the width for the columns</td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">void</td>
+					<td align="left" valign="top" width="100%"><a href="#function_pc4p_set_tableborder()"><h4>pc4p_set_tableborder(string $style)</h4></a>Set the style of the tableborder</td>
+				</tr>
+				
+			</table>
+		</td>
+	</tr>
+	
+	<tr>
+		<td align="left" valign="top">		
+			<table width="100%" border="0">
+				<tr>
+					<td colspan="2" align="left" valign="top"><h2>Private Method Summary</h2></td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">void</td>
+					<td align="left" valign="top" width="100%"><a href="#function_pc4p_draw_children()"><h4>pc4p_draw_children()</h4></a>Walks through the rows and cols and calls pc4p_draw in each cell;Warning: documentation is missing.</td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">integer</td>
+					<td align="left" valign="top" width="100%"><a href="#function_pc4p_calc_offset()"><h4>pc4p_calc_offset(object pc4p_page &$parent)</h4></a>Calculates the offsets in all cells, especially the x-coordinates!!!Warning: documentation is missing.</td>
+				</tr>
+				
+			</table>
+		</td>
+	</tr>
+	
+	
+	<tr>
+		<td align="left" valign="top">
+			<table width="100%" border="0">
+				<tr>
+					<td align="left" valign="top"><h3>Fields inherited from pc4p_object</h3></td>
+				</tr>
+				<tr>
+					<td align="left" valign="top"><a href="pc4p_object.html#variable_$children">$children</a>, <a href="pc4p_object.html#variable_$pdfp">$pdfp</a>, <a href="pc4p_object.html#variable_$width">$width</a>, <a href="pc4p_object.html#variable_$height">$height</a>, <a href="pc4p_object.html#variable_$margin">$margin</a>, <a href="pc4p_object.html#variable_$act_width">$act_width</a>, <a href="pc4p_object.html#variable_$act_height">$act_height</a>, <a href="pc4p_object.html#variable_$draw_height">$draw_height</a>, <a href="pc4p_object.html#variable_$alignment">$alignment</a>, <a href="pc4p_object.html#variable_$leading">$leading</a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	
+	
+	<tr>
+		<td align="left" valign="top">		
+			<table width="100%" border="0">
+				<tr>
+					<td colspan="2" align="left" valign="top"><h2>Private Field Summary</h2></td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">array</td>
+					<td align="left" valign="top" width="100%"><a href="#variable_$cell"><h4>$cell</h4></a>Array for accessing the cells of the table</td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">array</td>
+					<td align="left" valign="top" width="100%"><a href="#variable_$colsize"><h4>$colsize</h4></a>Array containing the sizes of each column</td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">array</td>
+					<td align="left" valign="top" width="100%"><a href="#variable_$rowsize"><h4>$rowsize</h4></a>Array containing the sizes of each row</td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">array</td>
+					<td align="left" valign="top" width="100%"><a href="#variable_$colnames"><h4>$colnames</h4></a>Array containing the names of each column</td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">array</td>
+					<td align="left" valign="top" width="100%"><a href="#variable_$rownames"><h4>$rownames</h4></a>Array containing the names of each row</td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">integer</td>
+					<td align="left" valign="top" width="100%"><a href="#variable_$draw_width"><h4>$draw_width</h4></a>x-Pos used when calculating the positions of subobjects</td>
+				</tr>
+				
+			</table>
+		</td>
+	</tr>
+	
+	
+	
+	
+	
+	
+	<tr>
+		<td align="left" valign="top">
+			<table width="100%" border="0">
+				<tr>
+					<td colspan="2" align="left" valign="top"><h2>Public Method Details</h2></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="function_pc4p_table()"><h4>pc4p_table</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>public    void pc4p_table( object pc4p_page &$parent )</b><p>
+					</td>
+				</tr>
+				<tr>
+					<td width="10" align="left" valign="top">&nbsp;</td>
+					<td align="left" valign="top">
+						Constructor
+						<br>
+						
+						<p>
+						
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top">Parameter</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td align="left" valign="top">						
+						<table>
+							<tr>
+								<td align="left" valign="top">object pc4p_page</td>
+								<td align="left" valign="top">&$parent</td>
+								<td align="left" valign="top"><code></code></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2" align="left" valign="top"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Returns</td>
+					<td>void <p></td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Author(s)</td>
+					<td align="left" valign="top">Alexander Wirtz &lt;<a href="mailto:wirtz@web-active.com">wirtz@web-active.com</a>&gt;</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="function_pc4p_create_tablematrix()"><h4>pc4p_create_tablematrix</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>public    void pc4p_create_tablematrix( integer $colsize, [ integer $rowsize, array $colnames, array $rownames ] )</b><p>
+					</td>
+				</tr>
+				<tr>
+					<td width="10" align="left" valign="top">&nbsp;</td>
+					<td align="left" valign="top">
+						Creates the table and sets the names for columns and rows
+						<br>
+						if provided, otherwise an index is used as name for each.
+						<p>
+						
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top">Parameter</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td align="left" valign="top">						
+						<table>
+							<tr>
+								<td align="left" valign="top">integer</td>
+								<td align="left" valign="top">$colsize</td>
+								<td align="left" valign="top"><code></code></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2" align="left" valign="top"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td align="left" valign="top">						
+						<table>
+							<tr>
+								<td align="left" valign="top">integer</td>
+								<td align="left" valign="top">$rowsize</td>
+								<td align="left" valign="top"><code>= >>1<<</code></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2" align="left" valign="top"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td align="left" valign="top">						
+						<table>
+							<tr>
+								<td align="left" valign="top">array</td>
+								<td align="left" valign="top">$colnames</td>
+								<td align="left" valign="top"><code>= >>array()<<</code></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2" align="left" valign="top"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td align="left" valign="top">						
+						<table>
+							<tr>
+								<td align="left" valign="top">array</td>
+								<td align="left" valign="top">$rownames</td>
+								<td align="left" valign="top"><code>= >>array()<<</code></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2" align="left" valign="top"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Returns</td>
+					<td>void <p></td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Author(s)</td>
+					<td align="left" valign="top">Alexander Wirtz &lt;<a href="mailto:wirtz@web-active.com">wirtz@web-active.com</a>&gt;</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="function_pc4p_add_tablerow()"><h4>pc4p_add_tablerow</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>public    void pc4p_add_tablerow( [ string $rowname ] )</b><p>
+					</td>
+				</tr>
+				<tr>
+					<td width="10" align="left" valign="top">&nbsp;</td>
+					<td align="left" valign="top">
+						Adds a row to the table
+						<br>
+						
+						<p>
+						
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top">Parameter</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td align="left" valign="top">						
+						<table>
+							<tr>
+								<td align="left" valign="top">string</td>
+								<td align="left" valign="top">$rowname</td>
+								<td align="left" valign="top"><code>= >>&quot;&quot;<<</code></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2" align="left" valign="top"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Returns</td>
+					<td>void <p></td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Author(s)</td>
+					<td align="left" valign="top">Alexander Wirtz &lt;<a href="mailto:wirtz@web-active.com">wirtz@web-active.com</a>&gt;</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="function_pc4p_set_tablecolsize()"><h4>pc4p_set_tablecolsize</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>public    void pc4p_set_tablecolsize( array $colsize )</b><p>
+					</td>
+				</tr>
+				<tr>
+					<td width="10" align="left" valign="top">&nbsp;</td>
+					<td align="left" valign="top">
+						Sets the width for the columns
+						<br>
+						
+						<p>
+						
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top">Parameter</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td align="left" valign="top">						
+						<table>
+							<tr>
+								<td align="left" valign="top">array</td>
+								<td align="left" valign="top">$colsize</td>
+								<td align="left" valign="top"><code></code></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2" align="left" valign="top"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Returns</td>
+					<td>void <p></td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Author(s)</td>
+					<td align="left" valign="top">Alexander Wirtz &lt;<a href="mailto:wirtz@web-active.com">wirtz@web-active.com</a>&gt;</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="function_pc4p_set_tableborder()"><h4>pc4p_set_tableborder</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>public    void pc4p_set_tableborder( string $style )</b><p>
+					</td>
+				</tr>
+				<tr>
+					<td width="10" align="left" valign="top">&nbsp;</td>
+					<td align="left" valign="top">
+						Set the style of the tableborder
+						<br>
+						
+						<p>
+						
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top">Parameter</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td align="left" valign="top">						
+						<table>
+							<tr>
+								<td align="left" valign="top">string</td>
+								<td align="left" valign="top">$style</td>
+								<td align="left" valign="top"><code></code></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2" align="left" valign="top"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Returns</td>
+					<td>void <p></td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Author(s)</td>
+					<td align="left" valign="top">Alexander Wirtz &lt;<a href="mailto:wirtz@web-active.com">wirtz@web-active.com</a>&gt;</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+			</table>
+	</tr>
+	
+	<tr>
+		<td align="left" valign="top">
+			<table width="100%" border="0">
+				<tr>
+					<td colspan="2" align="left" valign="top"><h2>Private Method Details</h2></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="function_pc4p_draw_children()"><h4>pc4p_draw_children</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>private    void pc4p_draw_children(  )</b><p>
+					</td>
+				</tr>
+				<tr>
+					<td width="10" align="left" valign="top">&nbsp;</td>
+					<td align="left" valign="top">
+						Walks through the rows and cols and calls pc4p_draw in each cell;
+						<br>
+						draws the boxes around the cells
+						<p>
+						Warning: documentation is missing.
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<td align="left" valign="top">Returns</td>
+					<td>void <p></td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Author(s)</td>
+					<td align="left" valign="top">Alexander Wirtz &lt;<a href="mailto:wirtz@web-active.com">wirtz@web-active.com</a>&gt;</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="function_pc4p_calc_offset()"><h4>pc4p_calc_offset</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>private    integer pc4p_calc_offset( object pc4p_page &$parent )</b><p>
+					</td>
+				</tr>
+				<tr>
+					<td width="10" align="left" valign="top">&nbsp;</td>
+					<td align="left" valign="top">
+						Calculates the offsets in all cells, especially the x-coordinates!!!
+						<br>
+						
+						<p>
+						Warning: documentation is missing.
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top">Parameter</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td align="left" valign="top">						
+						<table>
+							<tr>
+								<td align="left" valign="top">object pc4p_page</td>
+								<td align="left" valign="top">&$parent</td>
+								<td align="left" valign="top"><code></code></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2" align="left" valign="top"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Returns</td>
+					<td>integer $this<p> -&gt;height</td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Author(s)</td>
+					<td align="left" valign="top">Alexander Wirtz &lt;<a href="mailto:wirtz@web-active.com">wirtz@web-active.com</a>&gt;</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+			</table>
+	</tr>
+		
+	
+	<tr>
+		<td align="left" valign="top">
+			<table width="100%" border="0">
+				<tr>
+					<td colspan="2" align="left" valign="top"><h2>Private Field Details</h2></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="variable_$cell"><h4>$cell</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>private   array $cell</b>
+						<p>
+						>><code></code><<
+						<p>
+						Array for accessing the cells of the table
+						<br>
+						
+					</td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="variable_$colsize"><h4>$colsize</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>private   array $colsize</b>
+						<p>
+						>><code></code><<
+						<p>
+						Array containing the sizes of each column
+						<br>
+						
+					</td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="variable_$rowsize"><h4>$rowsize</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>private   array $rowsize</b>
+						<p>
+						>><code></code><<
+						<p>
+						Array containing the sizes of each row
+						<br>
+						
+					</td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="variable_$colnames"><h4>$colnames</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>private   array $colnames</b>
+						<p>
+						>><code>array()</code><<
+						<p>
+						Array containing the names of each column
+						<br>
+						
+					</td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="variable_$rownames"><h4>$rownames</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>private   array $rownames</b>
+						<p>
+						>><code>array()</code><<
+						<p>
+						Array containing the names of each row
+						<br>
+						
+					</td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="variable_$draw_width"><h4>$draw_width</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>private   integer $draw_width</b>
+						<p>
+						>><code></code><<
+						<p>
+						x-Pos used when calculating the positions of subobjects
+						<br>
+						
+					</td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+			</table>
+	</tr>
+		
+	
+	
+	<tr>
+		<td height="10" align="left" valign="top"><hr></td>
+	</tr>
+	<tr>
+		<td align="left" valign="top" bgcolor="#C0C0C0">			
+			<table>
+				<tr>
+					<td align="left" valign="top"><a href="phpdoc_packagelist.html">Packageindex</a></td>
+					<td align="left" valign="top"><a href="phpdoc_classtree.html">Classtrees</a></td>
+					<td align="left" valign="top"><a href="phpdoc_modulegroup.html">Modulegroups</a></td>
+					<td align="left" valign="top"><a href="phpdoc_elementlist.html">Elementlist</a></td>
+					<td align="left" valign="top"><a href="phpdoc_warnings.html">Report</a></td>
+					<td align="left" valign="top"><a href="phpdoc_xmlfiles.html">XML Files</a></td>
+				</tr>
+			</table>	
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="top">PHPDoc 1.0beta</td>
+	</tr>
+</table>
+
+</body>
+</html>

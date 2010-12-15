@@ -1,0 +1,112 @@
+* ARIA CSV File Import
+======================
+ARIA currently supports importing the following files:
+
+- Customers
+- Items
+
+Data is passed in CSV format (see below for more information). The functions are found in the Admin module.
+
+Sample CSV files may be found in the documentation directory. Please feel free to examine them for information on how to format the files.
+
+
+
+* CSV File Format
+==================
+The CSV file format is a common standard for transmission of text data. Most spreadsheet programs are capable of exporting into CSV format.
+
+Here are the major rules for how a CSV file should be formatted:
+
+1. It is a non-fixed width format using commas as column separators and a carriage return for end-of-record (line) markers.
+2. The first row in the file should be the column names. This allows you to order the columns in any way that is most convenient, but the column names are syntacticly required. That is, you have to use the exact column names.
+3. Text values are delimited with double quotes. Therefore you must strip double quotes from any text column or you will have trouble.
+4. Date values should be (@todo).
+
+** Using a spreadsheet to prepare CSV File
+------------------------------------------
+This is the best bet if you don't have access to a programmer or another utility to get your data into CSV format. The first row in the spreadsheet should be the column names. The following rows will contain your data. When you save, select to save in the CSV format.
+
+CSV stands for "comma separated values".
+
+
+* Customer CSV Import
+======================
+
+** Overview
+------------
+
+*** Columns recogniced in the customer CSV import file:
+  credit,contact,q_contact,taxcode,company,address1,address2,
+  city,addrstate,zip,phone,phone2,email,taxdist,st_company,
+  st_address1,st_address2,st_city,st_addrstate,st_zip
+
+contact		=> "bill-to" attn: (customer.billtoattnname)
+q_contact	=> "quote" attn:  (customer.quoteattnname)
+st_company	=> "ship-to" company 
+
+
+*** Notes about Customer CSV import
+
+This script inserts records into the following tables:
+  - company
+  - customer
+  - shipto
+
+**** Sample CSV file format:
+----------------------------
+credit,contact,q_contact,taxcode,company,address1,address2,city,addrstate,zip,phone,phone2,email,taxdist,st_company,st_address1,st_address2,st_city,st_addrstate,st_zip
+0.0000,"Renee Lachine","Renee Lachine"," ","American Computer Products","443 Brannan Street","","San Francisco","CA","94110","714/441-1200","","rlachine@acp.com","SNFR","American Computer Products","443 Brannan Street","","San Francisco","CA","94110"
+0.0000,"Susan T. Andrews","Susan T. Andrews"," ","Addison Dutton and Grant Inc.","Main Offices","1334 New Park Mall","Palo Alto","CA","94306","415/333-5678","","sandrews@prof.com","SNCL","Addison Dutton and Grant Inc.","Main Offices","1334 New Park Mall","Palo Alto","CA","94306"
+
+
+* Item CSV Import
+===================
+
+** Overview
+-----------
+*** Columns recognized in CSV Import File:
+
+  itemid,description,supplier,category,stockunit,priceunit,price,avgcost,lastcost,onhand
+
+*** Notes about Item CSV Import
+
+This script creates records in the following tables:
+  - item
+  - itemlocation
+  - itemcategory
+  - unitname
+  - priceperpriceunit
+
+After importing a properly configured CSV file, you should be able to immediately run the physical inventory worksheet in ARIA.
+
+For practice, use the sample item file items.csv.
+
+
+The column 'avgcost' can be any type of cost, but only the first matching itemid record is used.
+
+**** Unsupported Features
+--------------------------
+1. Multiple locations are not supported at this time. Location ID = 1 is used.
+2. The 'supplier' column is currently unused. 
+
+**** Sample CSV File:
+---------------------
+itemid,description,catalogurl,graphicurl,category,stockunit,priceunit,supplier,price,avgcost,lastcost,onhand
+"CABL16-BLK","Wire, 16ga, Black Vinyl"," "," ","CABLE","FT","FT","MCP1",3.33000,2.85772,2.81900,1175.00000
+"CABL16-GRN","Wire, 16ga, Green Vinyl"," "," ","CABLE","FT","FT","MCP1",3.33000,2.85582,2.90000,1100.00000
+
+
+* ARIA CSV Import Technical Information and Credits
+===================================================
+* Credits
+---------
+Original design and code for importcustomers.php by Noguska, Inc.
+Corrections and enhancements to importcustomers.php by Jeff Childers 2003.
+Importitems.php by Jeff Childers 2003 (gpl).
+file_db.class.php by Lennart Groetzbach (public domain)
+
+* Classes-file_db.class.php
+---------------------------
+The CSV import scripts use a CSV-reading class found in the includes directory:
+
+     ./includes/file_db.class.php

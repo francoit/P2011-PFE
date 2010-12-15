@@ -1,0 +1,26 @@
+ARIA Installation Guide for Linux (manual)
+
+ARIA has the following minimum software requirements.  
+
+	Apache 1.3.21		(or other web server supported by PHP)
+	OpenSSL 0.9.6b		(required by Mod_SSL)
+	Mod_SSL 2.8.4		(required for SSL operation)
+	Mhash 0.8.9		(required for Mcrypt)
+	LibMcrypt 2.4.15	(required for Mcrypt)
+	Mcrypt 2.5.7		(required for Blowfish encrypted password support)
+	PDFLib 4.0.1		(required for PDF generation)
+	Zlib 1.1.3		(required for PHP)
+	PHP 4.0.6
+	MySQL 3.23.41
+
+
+1. A good installation order is Apache preconfigure, OpenSSL, Mod_SSL,  Mhash, LibMcrypt, Mcrypt, PDFLib, Zlib, MySQL, PHP.   This will ensure that all dependencies are satisfied.
+2. Install and configure all packages, and configure Apache.s DocumentRoot to be to root of your ARIA directory.  Also be sure to configure Apache.s DirectoryIndex to include index.php.
+3. Import the database.sql file into mysql, using a command such as mysql -p < ARIAroot/utilities/MySQL/database.sql
+4. Import the starting data into mysql, using a command such as mysql -p < ARIAroot/utilities/MySQL/filldata.sql The starting data has many necessary things, such as a default login and a starting company.  It is required for normal operation.
+5. Change the mysql root password, and create a new mysql user for ARIA.  
+6. Enter the new database login information in ARIAroot/includes/my_defines.php, and also change any other options there you may want.
+7. Open up a web browser and point it to your new server.  You should be greeted with a login prompt.  If you are not, check your PHP and Apache configuration.
+8. Login with username "admin" and password "password" If you see the ARIA login prompt but the login fails, be sure that you imported database.sql and filldata.sql, and that your MySQL installation is working and the correct database authentication info is entered in ARIAroot/includes/my_defines.php.
+9. You may now proceed with the support document "Running ARIA for the first time".
+

@@ -1,0 +1,152 @@
+  ACCOUNTS PAYABLE
+
+
+ADMIN FUNCTIONS:
+
+
+Create table apglaccts(
+       payableid double not null      ' CURRENT LIABILITIES = 21
+       interestexpenseid double not null   ' 70 & UP
+       discountlostid double not null      ' 70 & UP
+       discountearnedid double not null,   ' 90
+       usetransactiondate int);            ' Y/N
+
+NOTE: This next table will also be used for PayrolL
+NOTE: gencompanyid is the main company, with 0=any company.
+      default should be current company.
+NOTE: Payables and Payroll should be checkboxes so user
+      can specify which ones are options for AP and which
+      for Payroll.
+
+Create table chkaccount(
+       id double not null unique auto_increment,
+       name char(30),
+       glaccountid double not null,
+       lastchecknumberused char(20),
+       gencompanyid double not null default 0,
+       payables int not null default 0,
+       payroll int not null default 0,
+       primary key (id),key(name));
+
+
+=========================================
+
+
+NOTES: Status: 0=open
+               1=paid in full
+NOTES: Description should default to defaultbilldescription
+       from vendor file
+
+NOTES: Wherefrom should be 1 if entered in AP, 4 if bill passed over
+       from Inventory PO's.
+
+NOTES: INVPOID will only be filled in if coming from a PO.
+NOTES: If wherefrom=4 (from inventory), then warn about changing
+       making PO's seem wrong.
+
+ENTER BILLS/CREDITS
+Create table apbill(
+       id double not null unique auto_increment,
+       invoicenumber char(20) not null,
+       status int not null default 0,
+       total decimal (12,2),
+       description char(50),
+       dateofinvoice date,
+       duedate date,
+       discountamount decimal(12,2)
+       discountdate date,
+       wherefrom int not null default 1,
+
+Create table apbilldetail(
+       id double not null unique auto_increment,
+       apbillid double not null,
+       amount decimal (12,2),
+       glaccountid double not null,
+       invpodetailid double not null,
+       invpoqtybill decimal (12,2),
+
+Report to show summary of payables - with due-by cutoff date if desired.
+   -sort by vendor, due date
+   -show invoice #, due date, discount amount, discount date, credit amount, amt.paid,
+	net due
+Report to show what payables are going to lose the discount with XX days from 
+	current day, and $$ discount that will be lost.
+
+When ready to pay bills, allow two check creation methods:
+	1. All due by MM-DD-YYYY (except those marked for HOLD)
+	   -need routine to select which invoices/vendors to place on hold or
+		remove from hold
+	   -need report of what will be paid if using a specific due date with
+		note about which ones on hold (cash requirements report)
+	2. Pick specific vendor, then specific invoices and amounts to be paid.
+		(allow for partial payments, additional interest added at the
+		last minute).
+User must pick which checking account to be used, display next check number for
+that account and let user over-ride.
+
+Report to show checks written.
+	-specific vendor between two dates
+	-by check number between two date
+	-either specific checking account or for ALL checking accounts
+		(if all ck accts, must show name of check account in report)
+	-cashed between two dates
+	-uncashed only
+
+Create table check(
+       id double not null unique auto_increment,
+       wherefrom int not null,  'this is flag to say "payroll" or "payables"
+       wherefromid double not null, 'apbillid, employeeid
+       amount decimal (12,2),
+       chkaccountid double not null,
+       chknum char(15),
+       chkdate date,
+       cancel
+       status (cashed/voided/open)
+       cashdate
+
+
+General Ledger tie ins:
+	When bill entered: must post to GL the following:
+		one transaction entry for each distribution (same sign as entry)
+		one transaction entry for total - use standard AP account and
+				reverse the sign
+		ignore discount originally
+
+	When bill changed:
+		when update, must check for changes, enter the opposite sign
+			or original entry for old values, and new entries same
+			way as laid out above for new entry.
+	When bill paid:
+		one transaction for total to AP account same sign as total
+		if paid within discount terms,
+                      	   if discount earned
+			one transaction to discount earned account 
+				opposite sign
+			one transaction to cash account the total MINUS
+				the discount (opposite sign)
+
+		   if discount lost
+			one transaction to cash the total MINUS the
+				discount (opposite sign)
+			one transaction to each distribution account the
+				discount based on a
+				percentage (MUST 
+				equal total discount exactly)
+				(opposite sign)
+		if paid AFTER discount allowed,
+		   if discount earned
+			one transaction to cash account the total (opposite
+				sign)
+		if discount lost
+			one transaction to cash account the total (opposite
+				sign)
+			one transaction to discount lost account the
+				discount amount (same sign)
+			one transaction to each distribution account the
+				discount based on a
+				percentage (MUST 
+				equal total discount exactly)
+				(opposite sign)
+
+								
+									

@@ -1,0 +1,2 @@
+insert into menupage (menufunctionid,name,orderflag,supervisor) VALUES (156,"importitem.php",1,1);
+insert into menufunction (id, menucategoryid, name, link, orderflag, supervisor,leftimageurl) values (156, 11, 'Import Items', 'importitem.php', 5, 1, 'images/menu/page.gif');

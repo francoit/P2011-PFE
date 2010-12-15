@@ -1,0 +1,598 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- Generated with PHPDoc, http://www.phpdoc.de -->
+<html>
+<head>
+	<title>PC4P - pc4p - Class: pc4p_main</title>
+	<link href="phpdoc.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<table width="100%" border="0">
+	<tr>
+		<td align="left" valign="top" bgcolor="#B0BAFF">			
+			<table width="100%">
+				<tr>
+					<td align="left" valign="top"><a href="phpdoc_packagelist.html">Packageindex</a></td>
+					<td align="left" valign="top"><a href="phpdoc_classtree.html">Classtrees</a></td>
+					<td align="left" valign="top"><a href="phpdoc_modulegroup.html">Modulegroups</a></td>
+					<td align="left" valign="top"><a href="phpdoc_elementlist.html">Elementlist</a></td>
+					<td align="left" valign="top"><a href="phpdoc_warnings.html">Report</a></td>
+					<td align="left" valign="top"><a href="phpdoc_xmlfiles.html">XML Files</a></td>
+				</tr>
+			</table>	
+		</td>
+	</tr>
+	<tr>	
+		<td height="20" align="left" valign="top"><hr></td>
+	</tr>
+	<tr>
+		<td align="left" valign="top">			
+			File: <a href="file:///data/customers/alex/htdocs/include/pc4p_main.inc" target="_new">/data/customers/alex/htdocs/include/pc4p_main.inc</a>
+			<h5>PC4P - pc4p</h5>
+			<h1>pc4p_main</h1>
+			pc4p_main<br>
+			<p>
+			PC4P's main class
+			<p>
+			&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="top">
+			<h4>private    class pc4p_main </h4>
+			PC4P's main class
+			<br>
+			
+			<p>
+			<table>
+				
+				
+				<tr><td align="left" valign="top">Authors</td><td align="left" valign="top">Alexander Wirtz &lt;<a href="mailto:wirtz@web-active.com">wirtz@web-active.com</a>&gt;</td></tr>
+				
+				
+				
+				
+				
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="10" align="left" valign="top">&nbsp;</td>
+	</tr>
+	
+	<tr>
+		<td height="20" align="left" valign="top"><hr></td>
+	</tr>
+	
+	
+	<tr>
+		<td align="left" valign="top">		
+			<table width="100%" border="0">
+				<tr>
+					<td colspan="2" align="left" valign="top"><h2>Public Method Summary</h2></td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">void</td>
+					<td align="left" valign="top" width="100%"><a href="#function_pc4p_main()"><h4>pc4p_main()</h4></a>Constructor - Initializes the filepointer required for apprehending</td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">void</td>
+					<td align="left" valign="top" width="100%"><a href="#function_pc4p_draw()"><h4>pc4p_draw()</h4></a>Calls the draw for each child, closes PDF Document, then makes</td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">void</td>
+					<td align="left" valign="top" width="100%"><a href="#function_pc4p_set_info()"><h4>pc4p_set_info(array $info_array)</h4></a>Sets the info values for the PDF</td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">void</td>
+					<td align="left" valign="top" width="100%"><a href="#function_pc4p_set_compression()"><h4>pc4p_set_compression(integer $compress)</h4></a>Sets the compression-parameter</td>
+				</tr>
+				
+			</table>
+		</td>
+	</tr>
+	
+	<tr>
+		<td align="left" valign="top">		
+			<table width="100%" border="0">
+				<tr>
+					<td colspan="2" align="left" valign="top"><h2>Private Method Summary</h2></td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">void</td>
+					<td align="left" valign="top" width="100%"><a href="#function_pc4p_draw_children()"><h4>pc4p_draw_children()</h4></a>Calls the draw function for each child in the children-array</td>
+				</tr>
+				
+			</table>
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="left" valign="top">		
+			<table width="100%" border="0">
+				<tr>
+					<td colspan="2" align="left" valign="top"><h2>Private Field Summary</h2></td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">array</td>
+					<td align="left" valign="top" width="100%"><a href="#variable_$children"><h4>$children</h4></a>Array of all children of this object</td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">integer</td>
+					<td align="left" valign="top" width="100%"><a href="#variable_$pdfp"><h4>$pdfp</h4></a>PDF-Pointer used for all pdf_*</td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">integer</td>
+					<td align="left" valign="top" width="100%"><a href="#variable_$fp"><h4>$fp</h4></a>File-Pointer for creating a PDF</td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">object pc4p_page</td>
+					<td align="left" valign="top" width="100%"><a href="#variable_$curr_page"><h4>$curr_page</h4></a>Pointer to the current page, used when walking through $children</td>
+				</tr>
+				
+				<tr>
+					<td align="right" valign="top">object pc4p_page</td>
+					<td align="left" valign="top" width="100%"><a href="#variable_$next_page"><h4>$next_page</h4></a>Pointer to the next page, used when walking through $children</td>
+				</tr>
+				
+			</table>
+		</td>
+	</tr>
+	
+	
+	
+	
+	
+	
+	<tr>
+		<td align="left" valign="top">
+			<table width="100%" border="0">
+				<tr>
+					<td colspan="2" align="left" valign="top"><h2>Public Method Details</h2></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="function_pc4p_main()"><h4>pc4p_main</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>public    void pc4p_main(  )</b><p>
+					</td>
+				</tr>
+				<tr>
+					<td width="10" align="left" valign="top">&nbsp;</td>
+					<td align="left" valign="top">
+						Constructor - Initializes the filepointer required for apprehending
+						<br>
+						the PDF-Pointer, which is initialized also
+						<p>
+						
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<td align="left" valign="top">Returns</td>
+					<td>void <p></td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Author(s)</td>
+					<td align="left" valign="top">Alexander Wirtz &lt;<a href="mailto:wirtz@web-active.com">wirtz@web-active.com</a>&gt;</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="function_pc4p_draw()"><h4>pc4p_draw</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>public    void pc4p_draw(  )</b><p>
+					</td>
+				</tr>
+				<tr>
+					<td width="10" align="left" valign="top">&nbsp;</td>
+					<td align="left" valign="top">
+						Calls the draw for each child, closes PDF Document, then makes
+						<br>
+						a passthrough for the temp-filepointer. The document is handedto the Browser, then the filepointer is closed as well.Called as last function in the class.
+						<p>
+						
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<td align="left" valign="top">Returns</td>
+					<td>void <p></td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Author(s)</td>
+					<td align="left" valign="top">Alexander Wirtz &lt;<a href="mailto:wirtz@web-active.com">wirtz@web-active.com</a>&gt;</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="function_pc4p_set_info()"><h4>pc4p_set_info</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>public    void pc4p_set_info( array $info_array )</b><p>
+					</td>
+				</tr>
+				<tr>
+					<td width="10" align="left" valign="top">&nbsp;</td>
+					<td align="left" valign="top">
+						Sets the info values for the PDF
+						<br>
+						
+						<p>
+						
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top">Parameter</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td align="left" valign="top">						
+						<table>
+							<tr>
+								<td align="left" valign="top">array</td>
+								<td align="left" valign="top">$info_array</td>
+								<td align="left" valign="top"><code></code></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2" align="left" valign="top"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Returns</td>
+					<td>void <p></td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Author(s)</td>
+					<td align="left" valign="top">Alexander Wirtz &lt;<a href="mailto:wirtz@web-active.com">wirtz@web-active.com</a>&gt;</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="function_pc4p_set_compression()"><h4>pc4p_set_compression</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>public    void pc4p_set_compression( integer $compress )</b><p>
+					</td>
+				</tr>
+				<tr>
+					<td width="10" align="left" valign="top">&nbsp;</td>
+					<td align="left" valign="top">
+						Sets the compression-parameter
+						<br>
+						
+						<p>
+						
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top">Parameter</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td align="left" valign="top">						
+						<table>
+							<tr>
+								<td align="left" valign="top">integer</td>
+								<td align="left" valign="top">$compress</td>
+								<td align="left" valign="top"><code></code></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2" align="left" valign="top"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Returns</td>
+					<td>void <p></td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Author(s)</td>
+					<td align="left" valign="top">Alexander Wirtz &lt;<a href="mailto:wirtz@web-active.com">wirtz@web-active.com</a>&gt;</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+			</table>
+	</tr>
+	
+	<tr>
+		<td align="left" valign="top">
+			<table width="100%" border="0">
+				<tr>
+					<td colspan="2" align="left" valign="top"><h2>Private Method Details</h2></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="function_pc4p_draw_children()"><h4>pc4p_draw_children</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>private    void pc4p_draw_children(  )</b><p>
+					</td>
+				</tr>
+				<tr>
+					<td width="10" align="left" valign="top">&nbsp;</td>
+					<td align="left" valign="top">
+						Calls the draw function for each child in the children-array
+						<br>
+						
+						<p>
+						
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<td align="left" valign="top">Returns</td>
+					<td>void <p></td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td align="left" valign="top">Author(s)</td>
+					<td align="left" valign="top">Alexander Wirtz &lt;<a href="mailto:wirtz@web-active.com">wirtz@web-active.com</a>&gt;</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+			</table>
+	</tr>
+		
+	
+	<tr>
+		<td align="left" valign="top">
+			<table width="100%" border="0">
+				<tr>
+					<td colspan="2" align="left" valign="top"><h2>Private Field Details</h2></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="variable_$children"><h4>$children</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>private   array $children</b>
+						<p>
+						>><code>array()</code><<
+						<p>
+						Array of all children of this object
+						<br>
+						
+					</td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="variable_$pdfp"><h4>$pdfp</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>private   integer $pdfp</b>
+						<p>
+						>><code></code><<
+						<p>
+						PDF-Pointer used for all pdf_*
+						<br>
+						
+					</td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="variable_$fp"><h4>$fp</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>private   integer $fp</b>
+						<p>
+						>><code></code><<
+						<p>
+						File-Pointer for creating a PDF
+						<br>
+						
+					</td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="variable_$curr_page"><h4>$curr_page</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>private   object pc4p_page $curr_page</b>
+						<p>
+						>><code></code><<
+						<p>
+						Pointer to the current page, used when walking through $children
+						<br>
+						
+					</td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+				<tr><td colspan="2" align="left" valign="top"><a name="variable_$next_page"><h4>$next_page</h4></a></td></tr>
+				<tr>
+					<td colspan="2" align="left" valign="top">
+						<b>private   object pc4p_page $next_page</b>
+						<p>
+						>><code></code><<
+						<p>
+						Pointer to the next page, used when walking through $children
+						<br>
+						
+					</td>
+				</tr>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<tr>
+					<td colspan="2" align="left" valign="top"><hr></td>
+				</tr>
+				
+			</table>
+	</tr>
+		
+	
+	
+	<tr>
+		<td height="10" align="left" valign="top"><hr></td>
+	</tr>
+	<tr>
+		<td align="left" valign="top" bgcolor="#C0C0C0">			
+			<table>
+				<tr>
+					<td align="left" valign="top"><a href="phpdoc_packagelist.html">Packageindex</a></td>
+					<td align="left" valign="top"><a href="phpdoc_classtree.html">Classtrees</a></td>
+					<td align="left" valign="top"><a href="phpdoc_modulegroup.html">Modulegroups</a></td>
+					<td align="left" valign="top"><a href="phpdoc_elementlist.html">Elementlist</a></td>
+					<td align="left" valign="top"><a href="phpdoc_warnings.html">Report</a></td>
+					<td align="left" valign="top"><a href="phpdoc_xmlfiles.html">XML Files</a></td>
+				</tr>
+			</table>	
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="top">PHPDoc 1.0beta</td>
+	</tr>
+</table>
+
+</body>
+</html>

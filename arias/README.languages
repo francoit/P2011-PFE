@@ -1,0 +1,69 @@
+README for language selection
+
+### Introduction ###
+
+Language selection can be choosen on a per user basis. Let's say that John wishes to view ARIA in Spanish and Jane would like it in French. Under the Admin->User and Rights
+select the name of the person from the drop-down box at the top and click the "Edit Selected User" button. From the edit user screen just select the language from the drop-down
+box under the "(Confirm)" section and click the "Save Changes" button. Lastly, log out and log back in for the changes to take effect.
+
+### Choosing you Language ###
+
+The language files for ARIA reside in the /includes/lang directory. Each file is named by number and each number id defined as follows:
+
+1.php	English
+2.php	Italian
+7.php	French
+8.php	Spanish
+10.php	Chinese Big-5
+11.php	Chinese UTF
+
+The default for ARIA is English file. To change this to your preferred language go into the /includes directory and open the file named defines.php, at line 243 you will see these 2 lines as follows:
+
+  define('DEFAULT_LANG', SD_ENGLISH);
+  define('DEFAULT_STR_CHAR_SET', 'utf-8');
+
+You can change the SD_ENGLISH to any value below:
+
+  Select from any of Below, * Meant Not done Yet
+  SD_ENGLISH 
+  SD_PORTUGUESE 
+  SD_URDU *
+  SD_PERSIAN *
+  SD_ARABIC *
+  SD_INDONESIAN *
+  SD_FRENCH *
+  SD_SPANISH *
+  SD_GERMAN *
+  SD_ZHBIG5
+  SD_ZHUTF8
+
+You can also change 'utf-8' to any of the coding system you are familier with.
+
+However, these setting will only be effective before the user login.
+After the user login the system languages will follow that the user choices (which is under the admin menu)
+
+And the char_set will be following the languages files. for Example, There are 2 Chines Translation Both are also Traditional Chinese, just one is using UTF-8 and one is using Big5.
+
+
+If You want a system wide languages configuration, then the below configuration will be your choice.
+On /includes/defines.php, at line 249 you will see these 2 lines as follows
+
+//  define('SYS_DEFAULT_LANG', SD_ENGLISH); //define System Overwrite Languages
+//  define('SYS_DEFAULT_STR_CHAR_SET', 'utf-8'); //define System Overwrite Charater Set
+
+They are comment by default, To active system wide languages setting just remove the comment "//"
+The usage are similar to the above configuration.
+
+  define('SYS_DEFAULT_LANG', SD_PORTUGUESE);
+Will make the default languages to Protuguese no mather what the user languges are.
+
+If you would like to use "UTF-8" as your system wide char_set, but don't really care about what is the user use languages, then you might just uncomment the following line.
+  define('SYS_DEFAULT_STR_CHAR_SET', 'utf-8');
+  
+This would make all user char_set have a UTF-8 char_set.
+
+Both of the configuration can be use speratly. 
+
+However, English will be the primary languages when there is a untranslating/missing string on the languages files. (This make sure that there aren't any broken function at all time)
+
+Be sure to save the file and refresh your browser and that's all.

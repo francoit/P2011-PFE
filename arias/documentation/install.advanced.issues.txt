@@ -1,0 +1,45 @@
+ARIA INSTALLATION GUIDE - ADVANCED ISSUES
+
+Separate Web and Database Servers:
+
+	There are a variety of reasons for this type of setup.  Scalability, security, and reliability can all be improved by 
+separating your web and database servers.  For this type of setup, it is recommended you install the complete ARIA package 
+on the web server(s) you wish to use to serve the web content, and install MySQL separately on the database server. 
+Edit the includes/my_defines.php file on your web server directory and change the SERVER_NAME option to the name of
+the new database server.  To change an existing single server installation into a split server configuration, stop the MySQL 
+services on both machines, and copy the MySQL data directory from the old server to the new. (Default mysql data directories 
+are C:\Program Files\ARIA\mysql\data on Windows and /usr/local/mysql/var on Linux)  You could even run different OS.s on your
+web server(s) and database server(s).
+
+----------------------------------------------------------
+
+Multiple Web Servers:
+
+	First, Install the ARIA package (including Apache and PHP) to each computer you would like to use as a web server. 
+Then edit the includes/my_defines.php file in the web server directory on each server and change the SERVER_NAME option 
+to point to your database server.  For a new installation, you will designate one server (probably the most powerful) to be 
+the database server.  This server can also act as a web server.
+
+----------------------------------------------------------
+
+Performance Tuning:
+
+There are a large number of configuration options for Apache, PHP, and MySQL, which may be tuned to your installation to 
+improve performance.  The manuals for each product will give more hints than this guide can provide, but we hope to give 
+you a starting point. 
+
+	Apache: On Unix platforms, increasing the MinSpareServers, MaxSpareServers, and StartServers settings in httpd.conf will increase performance under high load, on systems with enough RAM.
+	PHP: In the php.ini, sites with a large amount of data may need to increase the max_execution_time variable to prevent problems with web pages timing out.  Web servers with a lot of memory may increase the memory_limit variable to increase performance.  Also, you can install a PHP extension such as the Zend Optimizer, or the Bware Afterburner cache, to minimize the CPU cycles needed for the server.s PHP engine to interpret the ARIA code as it requested.
+	MySQL: For servers with a large amount of ram, add the line .set-variable = key_buffer_size=64M. to the [mysqld] section of your my.cnf file, setting the size to be appropriate for your server.  MySQL will allocate this much memory upon startup, so you must not make this larger than the available memory in your server.
+
+----------------------------------------------------------
+
+Security:
+
+Here are a few hints to help keep your installation as secure as possible.
+	1) Change the default MySQL password.  You will need to change this in the MySQL database, and in the includes/my_defines.php file.
+	2)On Unix, start Apache with the startssl argument to allow users to connect to the server over an encrypted SSL link.  This way, information sent to and from the server will be less vulnerable to network sniffing attacks.
+	3)ARIA can only be as secure as the operating system it runs on.  Subscribe to your OS vendor.s security mailing list, and patch any security holes found as soon as they are released.  Also, check for security updates for Apache, PHP, MySQL, and any other software running on the server.
+	4)Teach your users good security practices, such as choosing good passwords, keeping passwords secret, and logging their workstations off of the network when not in use.
+
+

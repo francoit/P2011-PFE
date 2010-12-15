@@ -1,0 +1,10 @@
+There are 2 files in this folder.
+arias.conf is the apache https configuration files.
+As I know so far, one ip only can have one ssl configuration
+(Correct me if I'm wrong)
+
+If you have a running ssl web server and would like to run arias on the 
+other name you would need to make an alias to the network address.
+which the ifcfg-eth0.1 is use for.
+
+Please rename ifcfg-eth0.1 to ifcfg-eth0:1 (Or what ever you like).

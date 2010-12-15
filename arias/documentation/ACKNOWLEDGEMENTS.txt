@@ -1,0 +1,9 @@
+This software is licensed under the commercial license included, however it makes use of other libraries which may have their own licenses.
+This software makes use of the Blowfish encryption algorythm, designed by Bruce Schneier of Counterpane systems.
+ADODB is maintained by John Lim (jlim@natsoft.com.my) http://php.weblogs.com/ADODB, and is used by the project for database abstration.  It is licensed under the LGPL version 2.1.
+class.tree is maintained by Patrick Hess (hess@dland.de) http://www.posi.de/index.php3?quickstart=php, and is used to generate navigational links.  This software uses the ftv2 javascript code developed by Marcelino Alves Martins (martins@hks.com) http://www.mmartins.com.  class.tree is licensed under the GPL, and ftv2 has no known license restrictions.
+JavaScript Calendar Component was originally authored by Michael L. Dean, the modified by Robert W. Husted (robert.husted@iname.com).  This component is used to display dates in a small calendar window.  This component has no known license restrictions.
+Barcode php class was written and is maintained by Karim Mribti (barcode@mribti.com).  It is licensed under the LGPL.
+The GD graphics library, referenced from the barcode php class was written and is maintained by Andrew Boutell, and is licensed under the LGPL.
+This software is OSI Certified Open Source Software.
+OSI Certified is a certification mark of the Open Source Initiative.

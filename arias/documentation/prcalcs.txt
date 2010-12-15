@@ -1,0 +1,180 @@
+CALCULATE PAYROLL
+
+GENERAL NOTES: 
+	- When summing up pay for benefits, deductions, etc. - ignore tax exempt pay.
+	- Hours Worked = total hours
+	- Hours Paid = st hrs + ot hrs x ot multiplier + dt hrs x 2
+
+
+1. Check to make sure employee not already calculated - skip if is.
+
+2. Set FACTOR - Read # periods per year for pay group (52 if weekly, etc.)
+
+3. Calculate hourly rate of pay if SALARY employee (already know hourly pay for hourly employees).
+	pay = salary / 40   if weekly
+	pay = salary / 80   if bi-weekly
+	pay = salary / 88   if semi-monthly
+	pay = salary x 12 / 52 / 40   if monthly
+
+4. SICK LEAVE
+	a) accumulate new sick leave available
+		sick leave hours per year / factor  (see #2 for factor)
+	b) make sure accumulated sick leave does not exceed maximum allowed to accumulate
+	c) make sure sick leave hours to be paid does not exceed accrued sick leave - reduce
+		to accrued amount if necessary
+	d) calculate sick leave pay:   hours x pay per hour x multiplier for sick leave pay
+	e) save new accumulated leave to employee file
+
+5. VACATION
+	a) accumulate new vacation hours available
+		determine which vacation period rates apply based on hire dare to today
+		vacation hours per year / factor  (see #2 for factor)
+	b) make sure accumulated vacation does not exceed maximum allowed to accumulate
+	c) make sure vacation hours to be paid does not exceed accrued vacation - reduce
+		to accrued amount if necessary
+	d) calculate vacation pay:   hours x pay per hour x multiplier for vacation pay
+	e) save new accumulated leave to employee file
+
+
+6. Calculate total pay - if $0.00 total, skip to next employee
+7. SAVINGS/PENSION PLANS
+	a) If plan is for a specific group, and this employee is not in that group, skip to next plan/calculation
+	b) If plan is for hourly only, and employee is salaried, skip to next plan/calculation
+	c) If plan is for salaried only, and employee is hourly, skip to next plan/calculation
+	d) If employee must contribute to be in plan, and employee has no rate entered, skip to next plan/calc
+	e) If flat rate for employee, set that amount to deduction
+	f) If percentage rate, calculate deduction based on wage base specified in plan.
+        g) For company contribution portion:
+                aa) if company is matching employee deduction, reduce amount based
+                        on max matched if that is appropriate. Otherwise, make same as
+                        employee deduction.
+                bb) if company is contributing a flat amount, make amount equal the
+                        flat amount to be contributed.
+
+8. GENERAL BENEFITS	
+	a) Make sure employee is in group, if benefit is for a specific group
+	b) Make sure employee is right type (hourly or salaried)
+	c) Calculate benefit based on HOW FIGURED. If there is a yearly ceiling entered,
+		sum up total annual pay including the pay for this period to see
+		if all, some, or none of this period's pay applies for benefit.
+		If calculation is based on WEEK ONE, then make sure pay period includes
+		the 1st of the month.
+		If calculation is a weekly amount, multiply the weekly amount by:
+			52 / number of periods per year
+9. FEDERAL TAX
+	a) Add up all pay (except non-taxable pay)
+	b) If federal exemptions claimed > 95 then no federal tax
+	c) If exemptions claimed > 69 subtract 70 from exemptions for federal calcs
+	d) If exemptions claimed > 49 subtract 50 from exemptions for federal calcs
+	e) If exemptions claimed > 30 subtract 30 from exemptions for federal calcs
+	f) figure total pay
+	g) reduce pay by pensionplan deductions that are exempt from federal tax
+	h) multiply pay times factor (see #2) so that looking at annualized pay
+	i) subtract (exemptions * annual exemption allowance) from pay
+	j) figure annual tax by looking at appropriate table
+	k) divide annual tax by factor (see #2) so tax is per pay period
+	l) if extra FIT per period, add either the flat amount or the percentage
+		indicated to tax calculated from table
+        m) FUI tax (company contribution)
+                aa) Calculate wages YTD except non-tax,
+                         less pension deductions if exempt from FUI
+                bb) Calculate wages THIS PERIOD  except non-taxable pay.
+                        Reduce pay by  pension deduction if exempt
+                        plan is exempt from FUI tax.
+                cc) Determine what portion of wages apply (not over ceiling)
+                dd) Calculate tax
+                
+10. FICA TAX
+	a) Add up all pay (except non-taxable pay)
+	b) subtract pension/plan deductions that are exempt from FICA taxes
+	c) Add up prior pay year-to-date less prior pension plan deductions that are
+		exempt from FICA taxes
+	d) if federal exemptions = 98 or 97 or (>29 and <70) then no FICA tax
+	c) if total prior pay > FICA ceiling, no FICA tax
+	d) if total prior pay + pay this period > FICA ceiling then tax applies
+		only to FICA ceiling less prior wages
+	e) calculate FICA tax on appropriate pay for this period
+        f) calculate company FICA tax on same pay as for "e"
+11. MEDICARE TAX
+	a) Add up all pay (except non-taxable pay)
+	b) subtract pension/plan deductions that are exempt from FICA taxes
+	c) Add up prior pay year-to-date less prior pension plan deductions that are
+		exempt from FICA taxes
+        d) if federal exemptions = 98 or 97 or (>29 and <70) then no MEDICARE tax
+	c) if total prior pay > MEDICARE ceiling, no MEDICARE tax
+	d) if total prior pay + pay this period > MEDICARE ceiling then tax applies
+		only to MEDICARE ceiling less prior wages
+	e) calculate MEDICARE tax on appropriate pay for this period
+        f) calculate company MEDICARE tax on same pay as for "e"
+11a. SUI TAX (company contrib)
+	a) Add up all pay (except non-taxable pay)
+        b) subtract pension/plan deductions that are exempt from SUI taxes
+	c) Add up prior pay year-to-date less prior pension plan deductions that are
+                exempt from SUI taxes
+        d) if total prior pay > SUI ceiling, no SUI tax
+        e) if total prior pay + pay this period > SUI ceiling then tax applies
+                only to SUI ceiling less prior wages
+        e) calculate SUI tax on appropriate pay for this period
+
+12. STATE, LOCAL, and CITY
+	a) if State/Local/City Exemptions >97 then no state tax
+	b) if State/Local/City Exemptions >69 and <90 then use exemptions - 70 for calcs
+	c) subtract from pay pension deductions that are exempt from state/local/city tax
+	d) if "deduct federal tax from pay first" subtract from pay the FIT tax
+	e) annualize pay (pay x factor from #2)
+	f) figure reductions of pay based on claimed exemptions:
+		add amount for one exemption if claiming >0
+			if married, add another amount for one exemption
+		if >=2 exemptions, add amount for two exemptions
+		if >=3 exemptions, add amount for three exemptions
+		if >3 exemptions, add (amount for 4+ exemptions) x (exemptions claimed 
+			minus three)
+
+		If max exemption allowed is percent of gross pay:
+			-if 0 entered, skip this
+			-calculate the percentage. If this is greater than exemptions
+			 figured use calculated percentage instead
+			-if yearly max. deduction allowed, and the calculated
+			  exemption is greater than the yearly max (if it is not 0)
+			  then reduce exemption amount to the yearly max.
+	g) calculate taxable pay: pay - exemption allowances
+		if claiming <0 exemptions, then subtract abs(exemptions) * factor (from
+		#2)
+	h) if taxable pay <= 0 then no state/local/city tax
+	i) calculate tax from state/local/city table
+	j) reduce tax for tax credit:
+		If one exemption claimed, subtract amount for one exemption from tax
+		If two exemptions claimed, subtract 2 x amount for two exemptions from tax
+		If three exemptions claimed, subtract 3 x amount for 3 exemptions from tax
+		If >3 exemptions, subtract exemptions x amount for 4+ exemptions from tax
+		If resulting tax is less than $0.00, make it $0.00
+	j) divide tax by factor (from #2) so tax is per period not year
+	k) calculate extra income tax and add to tax figured
+
+13. GENERAL DEDUCTIONS
+	a) Make sure employee is in group, if deduction is for a specific group
+	b) Make sure employee is right type (hourly or salaried)
+	c) Calculate deduction based on HOW FIGURED. If there is a yearly ceiling entered,
+		sum up total annual pay including the pay for this period to see
+		if all, some, or none of this period's pay applies for deduction.
+		If calculation is based on WEEK ONE, then make sure pay period includes
+		the 1st of the month.
+		If calculation is a weekly amount, multiply the weekly amount by:
+			52 / number of periods per year
+
+13a. GENERAL COMPANY CONTRIBUTIONS
+        a) Make sure employee is in group, if contribution is for a specific group
+	b) Make sure employee is right type (hourly or salaried)
+        c) Calculate contribution based on HOW FIGURED. If there is a yearly ceiling entered,
+		sum up total annual pay including the pay for this period to see
+		if all, some, or none of this period's pay applies for deduction.
+		If calculation is based on WEEK ONE, then make sure pay period includes
+		the 1st of the month.
+		If calculation is a weekly amount, multiply the weekly amount by:
+			52 / number of periods per year
+
+14. Calculate net pay (pay less deductions). If less than 0, remove pension deductions.
+	If still less than 0, remove deductions (after user OK or change of amount) 
+	for specific employee until net pay is a positive number (or zero).
+
+15. Update employee/week files, set calculate flag.

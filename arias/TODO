@@ -1,0 +1,34 @@
+TODO  -  Jobs To Do
+----------
+This is the jobs to do list,
+items with "-" in fronts is finished.
+items with "*" should be on the priority list.
+items with "+" is On the way.
+
+
+2003/8/06 by dcmwai
+---------
+Add Cash Book function Aria
+* Inventory is not funnly function if you are purchasing something in Pack but counting in Each. (Making Changes)
+* Adding Workorder/PO with DO to the Vendor for item assembly.
+
+2003/7/22
+---------
+Restructure menu in a more logical fashion. Example: Place delete customer on its own page rather then being combined
+with the update function as there is too much room for error
+
+Last update 2003/3/24 01:55 am by dcmwai
+--------
+- Getting how multiple languages work from phppgadmin (without recode will be the best) using array so that translating will be easy and they can check from new translated variable.
+- Inventory is still blocking the way.
+
+Last update 2003/3/24 01:55 am by dcmwai
+--------
+*+ Inventory function is not work fully.
+- Before Translate the files a new way of translate should be implemented.
+* All defines(configuration files) should have a *-dist files and in CVS should be ignore. configuration Version will be implement.
+- Printing in a New windows rather then in the same frames.
+Language is need to be translated to the pre define 3-9.
+- Menu is still read from SQL and there is still not way to translate it yet.
+- Horizontal Pull down menu is actually complete and we just need a time to activate it, mass change in header.php would be required.
+There are too many table on SQL which increase the time/overhead on execute, simplification is needed. (Take example form SQL-Ledger)

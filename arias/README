@@ -1,0 +1,36 @@
+ARIA
+----
+
+ARIA (Accounting, Receiving and Inventory Administration) is a web based accounting and inventory management package based off the NOLA project. ARIA aim's to be platform and browser independent with multi-language support.
+
+Please refer the file named INSTALL for installation procedures and instructions.
+
+ARIA is GPL software
+
+As of the writing of this README (2-19-2003) ARIA is considered BETA software. If you are reading this and using a > 1.0 release of ARIA then I have forgotten to remove this disclaimer. Please inform me:)
+
+Scant ARIA documentation can be found in the /documentation directory.
+
+Database creation and population scripts can be found in the /setup directory under their corresponding database directory names.
+
+The official ARIA web site can be found at http://arias.sourceforge.net
+
+You can email the project manager at jflechtner@users.sourceforge.net
+
+ The following method is preferred for a Tag Release:
+  - fetch the current CVS tree over anonymous CVS:
+
+    cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/arias login
+    [Password: ]  simply press the Enter key!
+
+    To get a stable taged Release
+    cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/arias co -r RELEASE_CODE arias
+
+    The release code are:
+    R0-97-5     For Release 0.97.5
+    R0-99-6	For Release 0.99.6
+    
+    To get the latest cvs release (Code may be broken)
+    cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/arias co arias
+
+   [This will create a new sub-directory named arias]

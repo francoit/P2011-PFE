@@ -1,0 +1,26 @@
+
+A { color:#3399cc; text-decoration:underline; }
+.whitelink { color:#3399cc; text-decoration:underline; }
+.blacklink { color:#3399cc; text-decoration:underline; }
+A:hover { color:#AABBDD; text-decoration:underline; }
+A:hover.blacklink { color:#333333; text-decoration:underline; }
+
+
+.boxborder { border-color:#3399cc; border-style:solid; border-width:2; }
+
+BODY { background-color: #3399CC; color: #3399cc; scrollbar-shadow-color: #3399cc; scrollbar-highlight-color: #CCCCCC; scrollbar-3dlight-color: #6699cc; scrollbar-darkshadow-color: #3399cc; scrollbar-track-color: #6699cc; scrollbar-arrow-color:#3399cc; }
+TH { background-color: #f8f8f8; color: #f8f8f8; }
+
+DIV { }
+.hidden { background-color: #3399cc; color: #3399cc; position: absolute; visibility: hidden; border-width: 1; width: 200; zIndex: 5; }
+FONT { }
+.tooltip { background-color: #3399cc; color: #3399cc; zIndex: 5; }
+
+INPUT  {
+    font-size : x-small;
+}
+
+SELECT  {
+    font-size : x-small;
+}
+

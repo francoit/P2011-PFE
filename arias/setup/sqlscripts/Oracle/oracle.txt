@@ -1,0 +1,4 @@
+The major difference in the oracle sql script is a work around for the lack of an auto increment column, using sequences and triggers.
+Also, foreign keys are not defined in the create table statement, but as create index's.
+Oracle uses the number data type rather than double.
+Oracle uses the blob data type rather than text.

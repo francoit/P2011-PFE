@@ -1,0 +1,272 @@
+RECEIVABLES - INVOICE
+
+Purpose: Carry invoice information.
+
+Sources: Details of invoice to come from: Inventory Orders, Printing Orders, Manually entered invoices.
+INVOICE ENTRY:
+     Bill-to/Ship-to
+     PO#
+     Auto-invoice number?
+     Details:
+             Description|Quantity Sold|Sales Unit|Price/Price Unit|Price Unit|Conversion
+                 from SalesUnit to Price Unit|Total|GL Sales Account|Cost of Goods|
+                 CostofGoods GL Account|taxable?
+     Allow skip of Quantity Sold or Price per Unit to enter TOTAL.
+     If user enters Quantity Sold and Price per Unit, CALCULATE TOTAL do not let user enter
+     Conversion should default to one (1).
+     Subtotal invoice.
+     Calculate taxes.
+     Add shipping.
+     Ask amount prepaid (paid with order).
+     Set wherefrom=2 if created here. If from inventory, and they make a change to the
+         invoice, may need to update inventory. Not sure what to do in this case???
+
+When POST INVENTORY TO INVOICING:
+     Qty to bill this invoice = QtyShip - QtyBill.
+     Add Qty for this invoice to QtyBill in inventory order file
+
+     Calculate taxes based on whether individual items are taxable, and
+     what taxid's the customer has in their file. Do NOT include shipping charges
+     in total to be taxed.
+
+     Assume one invoice per order, although many items from order can
+     appear on invoice.
+
+     Shipping Cost - add up from ARORDERSHIPPACKAGE, where ARINVOICEID does
+     not yet have a value. Then update ARINVOICEID to mark the cost as having been billed.
+
+     Item Code and Description need to be read from the inventory file.
+
+     Costglaccountid comes from inventory item file.
+
+     Calculate cost based on FIRST, then MID, then LAST COST
+          times qty billed. (decision to use FIRST, MID or LAST
+          depends on
+     Reduce Inventory location First Qty by qty billed. If less than 0,
+          0 out first qty and reduce overage from mid qty. If less
+          than 0, 0 out mid qty and reduce overage from last qty.
+          If less than 0, 0 out last qty.
+
+     No posting to GL happens until PRINT INVOICE process is done.
+
+PRINT INVOICE:  (do not post reprints!)
+     POST to GLTRANSVOUCHER, GLTRANSACTION.
+          gltransaction should have one entry for:
+               -each line item - to glaccountid account
+                  amount=total $$ for line (change sign)
+               -each line item - to Cost of Goods glaccount
+                  amount=cost
+               -each line item - costglaccountid (change sign)
+                  amount=cost
+               -one line item per invoice for receivables glaccount
+                  amount=invoice total
+               -one line per tax taxglaccountid, amount=tax (change
+                    sign)
+               -one line for shipping payable- shipping glaccountid
+                    amount = shipping (change sign)
+               -if any amount paid in advance, post
+                   -one line for CHECKING, amount = prepaidamount
+                   -one line for RECEIVABLES, amount=prepaidamount (change sign)
+                   -create entry in ARPAYMENT for payment, description should
+                           read "PAID WITH ORDER"
+                   -create entry in ARINVOICEPAYMENTDETAIL for payment.
+       Look up customer terms so you can:
+              Calculate DUE DATE based on days from invoice date for NET DUE
+              Calculate DISCOUNT DATE based on days from invoice date for DISCOUNT
+              Calculate DISCOUNT AMOUNT using percentage in TERMS TABLE for DISCOUNT
+
+DELETE or CHANGE INVOICE:
+       Reverse POSTING opposite sign for amounts done when printing invoice.
+       Delete prepaid entry in ARINVOICEPAYMENTDETAIL and ARPAYMENT if needed.
+
+RECEIVE PAYMENTS ON ACCOUNT:
+        Ask if balances should include the DISCOUNTS if applicable. If YES include
+        discounts, then balance should be Invoice total less payments made less
+        discount if NOT PAST the discount date.
+
+        Ask for payment method
+
+        Then ask card number/check number/voucher depending on method.
+
+        Bring up list of pending invoices for the selected customer, and let
+        the user indicate which are to be paid (All/Part/None). If PART to be
+        paid, then user must enter amount, otherwise the balance due (if ALL)
+        or zero if NONE.
+
+        Enter any interest paid. (by invoice)
+
+        POST BY INVOICE:
+             Voucher Number should be "P" plus check number or other as user wishes
+             cash (if cash), checking (if check or cc) - amount applied to this invoice
+             discount given account - any discounts applied
+             interest earned account - any interest entered (change sign)
+             receivables account - amount applied plus interest less discount (change sign)
+
+        Create an entry into ARPAYMENT for each payment received.
+        Create an entry into ARPAYMENTDETAIL for each invoice to which the payment was applied.
+
+        If more payment $$ than invoice $$, create a credit invoice with sales
+        gl account being the receivables gl account (as a positive amount) and the
+        checking account
+
+STATEMENT
+         specific customer or ALL customers
+         show only OPEN invoices
+         show any payments made on those open invoices
+         at bottom of statement, age totals into 30/60/90/120 days from date of invoice
+
+AGING REPORT
+      Include only open invoices.
+      Subtract from invoice total any payments made on that invoice.
+      Show Detailed (one line each invoice) or Summary (one line per customer).
+      Break totals into current/30/60/90 days from date of invoice
+      If Detailed, subtotal by customer
+      Total of all at end of report.
+
+PAYMENTS RECEIVED REPORT:
+         Specific or all customers, from-to dates
+         Show all payments received with sub-totals by customer within date range.
+         Show how all payments were applied (how much applied to which invoices).
+         Show date range on header.
+
+         If ALL customers, at end of report, do a list of CASUAL SALES (onaccount=1).
+
+CASUAL SALES:
+       User enters description, amount, GL sales account, tax districts if applicable,
+       tax exemption reason if not taxable,
+       method of payment. Card number if CC, Check number if Check.
+       Calculate any tax.
+       Create entry in ARCASHPAYMENT.
+       Create any necessary entryies into ARCASHPAYMENTTAX (one for each tax).
+       Post to GL:
+            If Check or CC method, post total including tax to CHECKING
+            If Cash method, post total including tax to PETTY CASH
+            Post total (minus tax) to SALES. (change sign)
+            Post tax amounts to Sales Tax payable accounts (change sign). Get GL
+                 account for tax from tax tables.
+       If delete a casual sale entry, reverse this posting before delete by
+          finding matching voucherid's. Reversal should have current date, not
+          original date of entry.
+
+SALES TAX REPORT:
+      Ask inclusive dates for report (default to beginning and end of prev.month).
+      Select tax district.
+      $$ shown on report exclude shipping, and tax.
+      Show detail of
+          invoice number  |  tax exempt $$   |   taxable $$  |  tax   |   exemption id **
+
+          **if no exemption id, but not in this tax district, show "not this district".
+
+      At bottom of report, show all CASH payments, taxes, etc.
+      Then show column totals, and a total sales (taxable + exempt$$)
+
+      Detail summary at end of $$ by exemption reason (or not this district).
+
+SALES JOURNAL (same as GL Journal, except using wherefrom=2)
+
+  -------------------------------------------------------
+NOTE:   wherefrom   2=ar, 4=inventory, 7=estimating   (changed default to 2 from 0)
+     (if inventory or estimating,   orderid  points to order in approp.file)
+               status   0=open, 1=printed, 2=paid in full (closed)
+
+create table arinvoice(
+       id double not null unique auto_increment,
+       invoicenumber char(20) not null,
+       ponumber char(30),
+       wherefrom int not null default 2,
+       orderid double not null,
+       orderbycompanyid double not null,
+       shiptocompanyid double not null,
+       status int not null default 0,
+       customerbillcode char(20),
+       companyid double not null,
+       shipcost decimal (10,2),
+       invoicetotal decimal (12,2),
+       prepaidamount decimal (12,2),
+       duedate date,
+       discountdate date,
+       discountamount decimal(12,2),
+       accruedinterest decimal(12,2),
+       datelastinterestcalc date,
+       cancel int not null default 0,
+       canceldate datetime,
+       canceluserid double,
+       entrydate datetime,
+       entryuserid double,
+       lastchangedate timestamp,
+       lastchangeuserid double,
+       primary key(id), key(invoicenumber), key(ponumber), key(orderbycompanyid), key(shiptocompanyid), key(companyid));
+
+create table arinvoicenotes (
+       invoiceid double not null unique,
+       note text,
+       lastchangedate timestamp,
+       lastchangeuserid double not null,
+       primary key(invoiceid));
+
+create table arinvoicedetail (
+       id double not null unique auto_increment,
+       invoiceid double not null,
+       itemcode char(20) not null,
+       description char(100) not null,
+       linenumber int not null,
+       qty double not null,
+       qtyunitnameid int not null,
+       glaccountid double not null,
+       taxflag int not null,
+       costtotal decimal(10,4),
+       costglaccountid double not null,
+       priceach decimal(10,4),
+       priceunitnameid int not null,
+       qtyunitperpriceunit decimal (10,4),
+       totalprice decimal (10,2),
+       entrydate datetime,
+       entryuserid double,
+       lastchangedate timestamp,
+       lastchangeuserid double,
+       primary key(id), key(invoiceid), key(linenumber), key(qty), key(glaccountid));
+
+
+create table invoicetaxdetail(
+     id double  not null unique auto_increment,
+     invoiceid double not null,
+     taxid double not null,
+     taxamount decimal (12,2),
+     primary key(id),key(invoiceid),key(taxid));
+
+create table invoicepaymentdetail(
+     id double  not null unique auto_increment,
+     invoiceid double not null,
+     amount decimal (12,2),
+     paymentid double not null,
+     primary key(invoiceid),key(voucherid),key(id));
+
+
+NOTE: paymentmethod 0=checking, 1=cash, 2=credit card
+NOTE: on cardnumber only allow last 4 digits to display to all except supervisor
+
+create table arpayment(
+     id double  not null unique auto_increment,
+     datereceived date,
+     paymentmethod int default 0,
+     cardnumber char(25),
+     checknumber char(15),
+     voucherid double not null,
+     primary key(id));
+
+NOTE: on cardnumber only allow last 4 digits to display to all except supervisor
+create table arcashpayment(
+       id double not null unique auto_increment,
+       datereceived date,
+       paymentmethod int default 0,
+       cardnumber char(25),
+       checknumber char(15),
+       description char(100),
+       taxexemptid double not null,
+       primary key(id));
+
+create table arcashpaymenttax(
+       arcashpaymentid double not null,
+       taxid double not null,
+       taxamount decimal (10,2),
+       primary key(arcashpaymentid),key(taxid));

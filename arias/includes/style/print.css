@@ -1,0 +1,70 @@
+A { 
+	text-decoration: none; 
+  }
+
+
+BODY { 
+	margin:5px;
+	scrollbar-shadow-color: #000000; 
+	scrollbar-highlight-color: #CCCCCC; 
+	scrollbar-3dlight-color: #6699cc; 
+	scrollbar-darkshadow-color: #000000; 
+	scrollbar-track-color: #6699cc; 
+	scrollbar-arrow-color:#000000; 
+    FONT-FAMILY: Verdana, Tahoma, sans-serif;
+    font-size : 14px;
+	}
+
+.hidden { 
+	background-color: #FFFF00; 
+	color: #000000; 
+	position: absolute; 
+	visibility: hidden; 
+	border-width: 1; 
+	width: 200; 
+	zIndex: 5; 
+	}
+
+.tooltip { 
+	background-color: #FFFF00; 
+	color: #000000; 
+	zIndex: 5; 
+	}
+
+FORM {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	}
+
+TABLE {
+	border: none;
+	border-style: none;
+	}
+
+.dateandtime  {
+	background-color: #336699;
+	text-align: center;
+	border: 0;
+    font-size: xx-small;
+	color: #DDDDDD;
+}
+
+INPUT  {
+    font-size : small;
+    BORDER-BOTTOM-COLOR: #111111;
+    BORDER-BOTTOM-WIDTH: 1px;
+    BORDER-LEFT-COLOR: #111111;
+    BORDER-LEFT-WIDTH: 1px;
+    BORDER-RIGHT-COLOR: #111111;
+    BORDER-RIGHT-WIDTH: 1px;
+    BORDER-TOP-COLOR: #111111;
+    BORDER-TOP-WIDTH: 1px;
+    COLOR: #111111;
+    FONT-FAMILY: Verdana, Tahoma, sans-serif;
+    FONT-WEIGHT: normal;
+}
+
+SELECT  {
+    font-size : x-small;
+}

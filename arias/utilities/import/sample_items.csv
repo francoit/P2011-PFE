@@ -1,0 +1,52 @@
+itemid,description,catalogurl,graphicurl,category,stockunit,priceunit,supplier,price,avgcost,lastcost,onhand
+"CABL16-BLK","Wire, 16ga, Black Vinyl"," "," ","CABLE","FT","FT","MCP1",3.33000,2.85772,2.81900,1175.00000
+"CABL16-GRN","Wire, 16ga, Green Vinyl"," "," ","CABLE","FT","FT","MCP1",3.33000,2.85582,2.90000,1100.00000
+"CABL16-RED","Wire, 16ga, Red Vinyl"," "," ","CABLE","FT","FT","MCP1",3.33000,2.87855,2.95000,1100.00000
+"CSCA","Code Switch/Cable Assembly"," "," ","CABLE","EACH","DOZEN","ACP1",49.99000,2.90917,2.90917,14520.00000
+"DIGC","Digital Cable"," "," ","CABLE","FT","FT","ACP1",3.33000,39.99000,39.99000,1100.00000
+"CD-DSK","CD-ROM Recordable Disk"," "," ","DS","EACH","EACH","AMC1",1.79000,0.99000,0.99000,400.00000
+"FLOP120","3.5" Super Floppy"," "," ","DS","EACH","EACH","AMC1",3.99000,2.01000,1.99000,1215.00000
+"A2EW","Uninterruptible Power Supply Protection"," "," ","HW","EACH","PACK6","ABC1",299.99000,38.34000,33.33167,3190.00000
+"BACD","Backup Drive, 3.0 GB Parallel/SCSI(w/2 cartridges)"," "," ","HW","","","ABC1",329.00000,239.99000,239.99000,500.00000
+"CD/DVD-RW","DVD3/CD-Rewritable"," "," ","HW","EACH","EACH","CMA1",299.99000,199.99000,199.99000,250.00000
+"DD120/1.4","120/1.4 MB Super Floppy Disk Drive"," "," ","HW","EACH","EACH","CMA1",99.99000,66.69000,66.69000,350.00000
+"HD10.0G","10.0 GB EIDE Ultra DMA 9.0ms Hard Disk Drive"," "," ","HW","EACH","EACH","MCL1",449.99000,206.11000,206.11000,375.00000
+"HD11.5G","11.5 GB EIDE Ultra DMA 9.0ms Hard Disk Drive"," "," ","HW","EACH","EACH","MCL1",499.99000,206.11000,206.11000,375.00000
+"HD7000","7.0 GB EIDE Ultra DMA 9.5ms Hard Disk Drive"," "," ","HW","EACH","PACK6","DIS1",279.99000,189.99000,189.99000,1300.00000
+"HD8400","8.4 GB EIDE Ultra DMA 9.5ms Hard Disk Drive"," "," ","HW","EACH","PACK6","DIS1",389.94000,330.99000,330.99000,700.00000
+"PRNJET","All-In-One Ink Jet 700 Printer, Fax and Copier"," "," ","HW","EACH","EACH","SCR1",549.99000,369.99000,369.99000,0.00000
+"PRNLASR","Laser 7 Printer"," "," ","HW","EACH","EACH","SCR1",799.95000,529.99000,529.99000,0.00000
+"PRNSCAN","Plus Scanner II"," "," ","HW","EACH","EACH","SCR1",829.99000,573.93000,573.93000,0.00000
+"UIDE","Combo Ultra IDE Interface/Ultra Wide SCSI Interface"," "," ","HW","EACH","EACH","IDS1",359.99000,297.99000,297.99000,100.00000
+"SVGA15","15" SVGA .26 mm dot pitch 1600 X 1200 color monitor (14")"," "," ","MON","EACH","EACH","CIS1",299.99000,199.99000,199.99000,50.00000
+"SVGA17","17" SVGA .25 mm dot pitch 1600 X 1200 color monitor (16.2")"," "," ","MON","EACH","EACH","CIS1",689.99000,299.99000,299.99000,50.00000
+"SVGA21","21" SVGA .26 mm dot pitch 1600 X 1200 color monitor (19.9")"," "," ","MON","EACH","EACH","CIS1",1125.00000,599.99000,599.99000,50.00000
+"CAM1","Digital Camera"," "," ","PERIPH","EACH","EACH","IDS1",349.99000,299.99000,299.99000,125.00000
+"MOUSE","Ergonomic Trackball Mouse"," "," ","PERIPH","EACH","EACH","MCP1",89.95000,59.99000,59.99000,20.00000
+"MOUSESRL","3-button Scrolling Ergonomic Serial Mouse"," "," ","PERIPH","EACH","EACH","MCP1",64.99000,49.99000,49.99000,10.00000
+"CONSULT","Consulting"," "," ","SERV","HOUR","HOUR","CSI1",300.00000,200.00000,200.00000,0.00000
+"SERVICE/MAINTEN","Service Maintenance"," "," ","SERV","HOUR","HOUR","",75.00000,25.00000,25.00000,0.00000
+"SHIP","Shipping Charges"," "," ","SHIP","LB","LB","",0.00000,0.00000,0.00000,0.00000
+"SHIP_FEDEX","Federal Express Shipping Charges"," "," ","SHIP","LB","LB","",0.00000,0.00000,0.00000,0.00000
+"SHIP_UPS","UPS Shipping Charges"," "," ","SHIP","LB","LB","",0.00000,0.00000,0.00000,0.00000
+"PAPER","Paper Standard 20lb. weight(copy and printer)"," "," ","SUPPLY","REAM","REAM","ACC1",0.00000,0.00000,0.00000,0.00000
+"SUPPLY","Supplies-assorted office supplies"," "," ","SUPPLY","EACH","EACH","ACC1",0.00000,0.00000,0.00000,0.00000
+"CAD4","Drafting Software, Version 4.0"," "," ","SW","EACH","EACH","IDS1",399.99000,259.99000,259.99000,25.00000
+"CAD5","Drafting Software, Version 5.0"," "," ","SW","EACH","EACH","IDS1",749.99000,449.99000,449.99000,25.00000
+"EXECSOFT","Executive Series Software"," "," ","SW","EACH","EACH","SBT1",92500.00000,65500.00000,65500.00000,2.00000
+"GRAPH4","Ultimate Graphics Software"," "," ","SW","EACH","EACH","SSU1",349.99000,182.50000,182.50000,15.00000
+"GRAPH5","Ultimate Graphics Software II"," "," ","SW","EACH","EACH","SSU1",599.99000,399.50000,399.50000,15.00000
+"PROSOFT","Pro Series Software"," "," ","SW","EACH","EACH","SBT1",15950.00000,12590.00000,12590.00000,0.00000
+"SPREAD7","Spreadsheet Software, Version 7.0"," "," ","SW","EACH","EACH","IDS1",633.33000,465.45428,433.99000,0.00000
+"WP60","Word Processing Software Suite, Version 6.0"," "," ","SW","EACH","EACH","IDS1",249.99000,144.00000,144.00000,20.00000
+"WP70","Integrated Word Processing Package, Version 7.0"," "," ","SW","EACH","EACH","IDS1",349.98000,149.00000,149.00000,15.00000
+"COMP1","450MHz CPU, 8.4GB HD, 96MB RAM, 32X CD-ROM, 3D PCI Sound"," "," ","SYS","EACH","EACH","ASY1",1999.99000,750.00000,750.00000,6.00000
+"COMP2","500MHz CPU, 10.0GB HD, 128MB RAM, 100X CD-RAM, 3D PCI Sound"," "," ","SYS","EACH","EACH","ASY1",2299.99000,850.00000,850.00000,4.00000
+"COMP3","600MHz CPU, 11.5GB HD, 128MB RAM, 100X CD-ROM, 3D PCI Sound"," "," ","SYS","EACH","EACH","ASY1",2399.99000,950.00000,950.00000,10.00000
+"NB400","Notebook 400MHz, 6.4GB HD, 128MB RAM"," "," ","SYS","EACH","EACH","ASY1",2299.99000,1150.00000,1150.00000,40.00000
+"DISCOUNT","Discount"," "," ","SERV","EACH","EACH","MISCL",0.00000,0.00000,0.00000,0.00000
+"_FINANCE_CHARGE","Finance Charge"," "," ","","","","",0.00000,0.00000,0.00000,0.00000
+"NB450","NoteBook 450MHz, 8GB HD, 128MB RAM"," "," ","SYS","EACH","EACH","CIS1",0.00000,0.00000,0.00000,0.00000
+"FREIGHT","Freight"," "," ","","EACH","EACH","",0.00000,10.00000,10.00000,0.00000
+"DOCK","Dock fees"," "," ","","EACH","EACH","",0.00000,5.00000,5.00000,0.00000
+"IMPORT","Import Fees"," "," ","","EACH","EACH","",0.00000,25.00000,25.00000,0.00000

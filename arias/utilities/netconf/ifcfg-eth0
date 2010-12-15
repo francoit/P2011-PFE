@@ -1,0 +1,13 @@
+# Please read /usr/share/doc/initscripts-*/sysconfig.txt
+# for the documentation of these parameters.
+GATEWAY=192.168.1.1
+TYPE=Ethernet
+DEVICE=eth0:1
+BOOTPROTO=none
+NETMASK=255.255.255.0
+ONBOOT=yes
+IPADDR=192.168.1.2
+USERCTL=no
+PEERDNS=yes
+NETWORK=192.168.1.0
+BROADCAST=192.168.1.255

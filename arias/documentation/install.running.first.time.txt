@@ -1,0 +1,16 @@
+Rnning ARIA for the first time
+
+1. To follow this guide, you must have a freshly installed ARIA system, by completing the installation guide for your platform. 
+2. Point a web browser to the web server where ARIA is installed.  You should be greeted with a login prompt.
+3. Login as user .admin., with password .password..
+4. After logging in successfully, you will see the main ARIA screen.  There is a frame on the left side of your window, which contains navigation links to the different ARIA modules; and a larger frame on the right side, which will change as you proceed through the software.
+
+Navigation
+5. On the left frame, you will see 14 sections starting with .Order Entry. at the top and ending with .Logout. at the bottom. Each entry is clickable and displays its corresponding sub-categories in the larger frame on the right side. Most of the time you must click on the sub-categories in the main, or larger frame until you reach a functional form.
+
+Getting Started
+6. First, you will setup your company information.  Click on the .Admin. link in the left menu, then .Client Companies., and finally select .Add new Company..
+7. This will make the company selection screen appear in the main frame.  The ARIA system allows you to set up multiple, separate companies, so this page allows you to select which company you wish to edit. 
+8. Once again click the .Admin. folder on the left side, and select .Users and Rights..  This will pull up the .Add User. page in the main frame.  Add a new user for yourself.  If you are unsure about anything on this page, or most other pages, there may be a help link near the bottom of the page, which will allow you to view help on your specific page.
+9.Finally, you should complete the rest of the items under the .Admin. folder to finish setting up ARIA for your company.
+

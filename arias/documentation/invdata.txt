@@ -1,0 +1,141 @@
+/*
+INVENTORY/ORDER ENTRY:
+
+ITEMS
+     -add
+     -update - with drill-down to history of usage/purchases
+          'allow to copy price& discounts from one location to all locations for
+           same item
+     -list
+     -Category
+          -Add
+          -Update
+     -Receive into inventory (no PO)
+     -*Physical Inventory entry/reports
+     -*Vendor price lists
+          -add
+          -update
+*/
+
+/*
+pricecode cost based on first (1), mid (2), last (3)
+============================================================
+VENDORS
+     -add
+     -update 'allow drill-down to $ figures for this year/last year bills & paid with
+          most recent dates for bills/payments
+     -list
+     -Terms Tables
+          -add
+          -update
+*/
+
+
+/*
+================================================================
+CUSTOMERS
+     -add
+     -update
+     -list
+     -Terms table
+          -add
+          -update
+     -Sales tax tables
+          -add
+          -update
+     -Tax exempt categories
+          -add
+          -update
+     -Salespersons
+          -add
+          -update
+
+*/
+
+/*
+===============================================================
+SALES/ORDERS
+     -add (option to use items from only one location to fill)
+     -update
+     -tracking (check-out of order by which person)
+     -print pick tickets with bar-codes
+     -list
+     -fill/ship (print shipping document)
+     -import from FTP or other
+     -set next number if automatic assignment
+
+     NOTES: When adding a new order, need to check for availability and
+            warn of any not on-hand. Need to look up pricing to attach
+            to order.
+     NOTES: When marking an order filled/shipped, need to update on-hand
+            in item file (reduce by quantity filled) making sure it is
+            from the right location.
+
+REPORTS
+     -Order
+          -Status
+          -Order History by Customer
+          -Order History by Item
+          -Order History by Charge Code
+     -Item
+          -Status (on hand/committed/on order)
+          -Usage History by Item
+          -Usage History by Category
+          -Usage History by Location
+          -Alert Report (items needing ordering)
+
+
+===========================
+
+ORDER FILES:
+      HEADER FILE:
+             ID
+             Order Number
+             PO Number
+             Customer Ordered by
+             Customer to ship to (or allow entry manually for one-times)
+             Receive date/time
+             Status (0=open, 1=on hold,
+                     2=filled complete, 3=billed final)
+             Cancel (1=yes)
+             Account Number (customer account code)
+             CompanyID
+             Price Level to be used
+             Location to use (0=any)
+
+      DETAIL LIST:
+             OrderNumberID
+             Itemid
+             LineItemNumber (starts over each order)
+             Quantity Ordered
+             Quantity Shipped
+             Quantity Billed
+             Sales Account for GL
+             Taxable Item (1=yes -- default to customer taxable status)
+             Item Cost \   assign these when order received so if change
+             Item Price /                 later, prices don't change
+
+      SHIP DETAILS:
+             Order NumberID
+             Item id
+             Quantity Shipped
+             FreightCostDetailsID
+
+      FREIGHT COST DETAILS
+             Id
+             Order NumberID
+             Tracking Number
+             Date Shipped
+             $$ Freight
+             Weight of Pkgs.
+             Locationid
+      OrderTax:
+             Id
+             OrderNumberID
+             TaxRateID
+             TaxAmount
+
+
+
+
+*/

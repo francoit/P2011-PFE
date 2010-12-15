@@ -1,0 +1,175 @@
+Changes Log
+=============
+Developers please put your changes here, if your are refering to a Bug please include the bug number as well. [Bug 688337]
+For Things to do, please put it on TODO and not here.
+
+2003/11/20 01:20 by dcmwai
+---------
+Adding a xmlrpc static library files for Gnue-report.
+
+2003/11/14 00:52 by dcmwai
+---------
+Add Version into Aria Header
+update Italian Languages from Marco Taschin <ocram@teleest.com>
+Update the help index, But it is still messy. but at least it can run now :)
+
+2003/11/12 21:24 by dcmwai 
+--------
+Thank to Jeff Childers <jchilders_98@yahoo.com>
+    CSV import Tools.
+    Add Menu for item import.
+
+2003/10/30 XX.XX by dcmai
+-------- 
+Solve add a shipping method
+Javascript of Item Transfer solved.
+Min/Max Stock level Missplace.
+
+2003/09/01 2:30 by dcmwai
+--------
+Moving Multi-Currency to header. Affected file(s): invpoadd.php, invpoupd.php, database.sql, header.php, update_for_99_3_Below.sql
+
+2003/08/31 4:50 by dcmwai
+--------
+filldata & database. modified schema to allow new inventory unit/pack feature
+
+2003/08/31 4:50 by dcmwai
+--------
+invpoupd.php invporecv.php invpolist.php invpoadd.php. Purchase item with pack base is enable
+
+2003/08/31 2:35 by dcmwai
+--------
+lookupitem.php sorts by item category and item description
+
+2003/08/26 4:23 by jflechtner
+--------
+Updated ADODB from 3.70 to 3.72
+
+2003/08/26 4:23 by jflechtner
+--------
+Updated French language file.
+
+2003/08/12 8:00 by dcmwai
+--------
+Changed Inv. Item transfer to not-function when only one stock location exists.
+
+2003/08/10 20:45 by dcmwai
+--------
+DB Change, DB Structure resize, fill-in Data now With Default Chart of Account and a demo user
+
+2003/08/10 12:14 by jflechtner
+--------
+Created help directory. Moved corresponding files into help directory. Placed new help link into footer.
+
+2003/08/06 9:45 by jflechtner
+--------
+Updated ADODB to v.3.70
+
+2003/08/01 1:00 by dcmwai
+--------
+Fixed language translation selection in genuserupd.php
+
+2003/07/29 11:30 by jflechtner
+--------
+Released ARIA version 0.99
+
+2003/07/27 12:00 by jflechtner
+--------
+Changed short tag <?> to long tag form <PHP (Thanks Russ Wright)
+
+2003/07/25 2:20 by dcmwai
+--------
+Added Setup function to Horizontal menu
+invpotoap.php Languages Translation caused Bug. (There is ***STILL*** A Know Bug here, Don't use this yet)
+invporecv.php fixed Languages Translation bug.
+invitemreclist.php fixed Languages Translation bug.
+
+2003/07/13 10:00 by jflechtner
+--------
+Added updated jpgraph
+
+2003/07/12 2:30 by jflechtner
+--------
+Added updated ADODB
+
+2003/07/11 1:00 by dcmwai
+--------
+Added functional horizontal menu. Still needs testing.
+
+2003/07/07 12:00 by jflechtner
+--------
+Release ARIA version 0.98
+
+2003/06/09 3:18 by dcmwai
+--------
+Added support for multiple storage places
+
+2003/06/06 1:28 by dcmwai
+--------
+Fixed Inventory deduction problem in arordshipadd.php
+
+2003/05/29 2:42 by jflechtner
+--------
+Included new directory named "setup". This contains the setup files for installation "wizard". As of writing this the installation script is not 100% complete. Moved database creation scripts and filldata scripts from the /utilities directory and into the setup directories corresponding sub-directories
+
+2003/05/26 17:26 by dcmwai
+--------
+Menu Level Translation Complete. Waiting for translate.
+Lost images on Document Manager is solve.
+Define your Defualt languages in define.php
+
+2003/5/05 2:38 by jflechtner
+--------
+invporecv fixed
+
+2003/4/29 18:59 by dcmwai
+--------
+Some Minor Bug cause by the New translation have been fix, all files should be running except invporecv.php which take times.
+From Now on use {$lang['STR_XXXXX']} instate of $lang['STR_XXXXX'] when calling the variable.
+
+2003/4/28 08:35 am by dcmwai
+--------
+New translation is in place instate of usinf define, we use $lang Array.
+global $lang have been add so that fucntion can actually load langauges translate string.
+langcheck have been added to ease translator jobs. For information please read Translation
+
+2003/4/28 07:45 am by jflechtner
+--------
+Help index is Build, all help files is group and we have a list of it.
+
+2003/4/25 08:45 pm by dcmwai
+--------
+Solve Languages Cause Problem on arordadd.php, invpoupd.php.
+Change logout statement in function.php so that logout will be a full logout.
+
+2003/4/15 05:10 pm by dcmwai
+--------
+gljourupd.php Javascript on CheckBal() have been corrected so that mozilla can run it.
+invitemupd.php & invitemupd1.php Minor Bug Fix 
+interface.php Logon Interface Changes...
+KnowBug Files added for Bug
+
+2003/4/8 05:56 pm by dcmwai
+---------
+Languages Chinese Traditional both (Utf-8 and big5) coded is included.
+
+2003/4/3 12:46 pm by dcmwai
+---------
+Jpgraph Update to 1.11 Chart may be broken, please report.
+Pie Chart Langauges problem is Fix. (still cannot support printing multiple bytes in pie chart)
+
+2003/3/25 11:34 am by dcmwai
+---------
+horimenu2.php in place, Developer are welcome to have a try. cheat on code have been made so it is workable on Both Mozilla and IE broswer.
+
+2003/3/25 03:54 am by dcmwai
+---------
+ADOBO 3.11 is updated Major PostgreSQL improvement, please use checkout to get a the files.
+ChangeLog Files Added To Monitor Project On Going.
+DEVELOPERS Added.
+
+2003/3/24 01:44 am by dcmwai
+---------
+The language translation module have been complete, although it is not the right way of Programming work.
+Header and footer have been re arrange, if somehow footer is still on the on the beginning of the files, please do tell us.
+TODO have been added to monitor to do jobs.

@@ -1,0 +1,80 @@
+DEVELOPER INFO
+--------------
+ Please learn Smarty (http://smarty.php.net/).
+ Smarty is a template for PHP and is going to be use for the next version.
+ After all stuff are working on arias, we are going to rewrite the whole system
+ after all things is working. we are now cheating too much on the code.
+ And rewrite is the options that will solve most of the problem.
+
+ Arias is Open Source, so you're invited to contribute to it.
+ Many great features have been written by other people and you too
+ can help to make Arias a useful tool.
+
+ If you're planning to contribute source, please read the following
+ information:
+
+ The following method is preferred for new developers:
+  - fetch the current CVS tree over anonymous CVS:
+
+    cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/arias login
+    [Password: ]  simply press the Enter key!
+
+    cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/arias co arias
+    [This will create a new sub-directory named arias]
+
+  - Add your stuff
+  - Send us the file(s) you've modified or send us a patch (preferred).  To generate a patch, do this
+    in your 'webdb' or 'Arias' directory:
+
+    	cvs diff -c > file.txt
+
+    Then, just send us the file.txt
+
+	Please note submitting code is considered a transfer of copyright to the Arias project.
+
+ Only project developers can access the CVS tree via ssh and SSH must
+ be installed on your client machine.
+
+  	export CVS_RSH=ssh
+
+  	login once with ssh to developername@cvs.sourceforge.net to create required
+  	user directories on the server.
+
+  	cvs -z3 -d:ext:developername@cvs.sourceforge.net:/cvsroot/arias co arias
+
+ Write access to the CVS tree is granted only to developers who have already
+ contributed something useful to Arias.  If you're interested in that,
+ please contact us.
+
+ TIPS FOR DEVELOPERS
+ -------------------
+
+ When you submit code to Arias, we do expect it to adhere to the existing
+ coding standards in the source.  So, instead of using your personal favourite
+ code layout style, please format it to look like surrounding code.
+
+ Test your code properly!  Say you are developing a feature to create domains.
+ Try naming your domain all of the following:
+
+	* "
+	* '
+	* \
+	* words with spaces
+	* <br><br><br>
+
+ If you are are placing new language string, please add it at 1.php, the format
+ of the string in the PHP files should be {$lang['STR_XXX']).
+
+ When you are adding new function with languages string remember to put
+ global $conn, $lang;
+ Where $conn is for ADODB connection, and $lang if the the languages Array.
+
+ When dealling with Mathmatics on currency, please include checkdec() to make
+ sure the numeric number is adding correctly.
+
+ If you are adding a new class function, be sure to use the "clean",
+ "fieldClean", "arrayClean" and "fieldArrayClean" functions to properly escape
+ odd characters in user input.  Examine existing functions that do similar
+ things to yours to get yours right.
+
+

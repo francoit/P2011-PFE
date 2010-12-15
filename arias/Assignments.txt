@@ -1,0 +1,30 @@
+This document will be used to show current status of work assigments. All finished assignments will be duely noted in Changelog
+
+Assisgments:
+
+DEVELOPER NAME:		jflechtner
+CURRENT ASSIGNMENT:	Documentation/User Manual
+DETAILS:					Write professional documentation for ARIA user's manual, developers manual and installation manual.
+DATE STARTED:			8/1/2003
+
+
+DEVELOPER NAME:		dcmwai
+CURRENT ASSIGNMENT:	Inventory
+DETAILS:					Change PO to enter Price/Pack and Unit/Pack. Add Currency to PO to purchase different items with different currency. Add receive item list to purchase and find invoice by item code.
+DATE STARTED:			8/1/2003
+
+
+DEVELOPER NAME:		rwright
+CURRENT ASSIGNMENT:	Printing page control
+DETAILS:					Control output so that it doesnt fill up one page. Allow for controled output on a per page basis.
+DATE STARTED:			8/23/2003
+
+
+DEVELOPER NAME:		lbonanomi
+CURRENT ASSIGNMENT:	Presentation and Installation
+DETAILS:					Harden install script. Seperation of presentation vs. logic, extraction of HTML output to it's own template pages.
+DATE STARTED:			8/23/2003
+
+
+
+

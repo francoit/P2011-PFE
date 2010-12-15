@@ -1,0 +1,19 @@
+$userid is a session variable, set from includes/main.php (and again in menu.php.. had problems with it 'sticking'), that contains the id of the current logged in user.
+$active_company is a session variable, set from menu.php, that contains the id of the company the user is currently using.
+$companyname is a session variable, set from menu.php, that is contains the name of the company the user is currently using.
+$multi_company is a session variable, set from menu.php, that is false if only 1 company is set up, or true (returning the number) if more than one company exists.
+$usersupervisor is a session variable, set from menu.php, that is equal to the admin column of the user table for the current user.
+Monetary values should be stored in database as decimal(12,2), not double.
+Html forms should be named mainform for consistancy.  Form names are most often used by javascript.
+Help files may be called help(referencefilename) and put in the root directory. This will create a link in the footer called 'Help' which will overlay the help file when clicked.
+createtime($format) may be used to render the current date/time in your supplied $format, such as "Y-m-d".
+sql table creation has the following differences between databases (test which database with the DB_TYPE define):
+	mysql           	mssql/access	oracle       sybase
+	auto_increment   	identity	see below    autoincrement
+	double (in id columns)	numeric  	double       double ?
+	double (elsewhere)	real      	double       double ?
+	blob               	text     	text         text
+DB2 should be entirely compatible with mssql/access.
+Oracle has an auto increment column in the form of rowid, but it is not compatible with how it is used in our software.  Instead, auto increment is implimented as sequences and triggers.
+$user_stylesheet is a session variable, set equal to the filename portion of the css the user has selected.
+checkdec($number,$decimalplaces) returns $number, and truncates it to $decimal places if the truncation will not remove significant digits.  This should be wrapped around all monetary values, esp with the PREFERRED_DECIMAL_PLACES define as $decimalplaces

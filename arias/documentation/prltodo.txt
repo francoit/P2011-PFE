@@ -1,0 +1,12 @@
+Payroll yet to do:
+
+1. W2's need a summary form filled in
+2. Check summary needs to show fica wages, city wages, state wages, etc. on summary part
+3. Deposit check edit/list
+4. Unemployment report
+
+
+Inventory to do:
+
+1. RMA tracking ?? may this is there??
+2. Customer returns create will-call slips and credit memo if already passed to payables.

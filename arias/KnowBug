@@ -1,0 +1,68 @@
+KnowBug  -  Know Bug
+----------
+This is the Bug listed,
+items with "-" in fronts is done/Solve
+items with "*" should be on the priority list.
+items with "+" is On the way.
+items with "#" will never be solve.
+
+
+Last update 2003/11/01 08:45 by dcmwai
+Adding the bug list from Tricia
++ Help in menu is not working
++ Company update - after clicking save changes no confirmation of save
+  and the words 'credit limit' appear at top above company name.
+Payroll - what is the annual exemption allowance on federal tax add?
+Payroll->setup functions for payroll->standard GL accounts - 
+  after filling out the form and clicking save, no success confirmation 
+  and leaves you on a blank page with nowhere to go!  However, if you go 
+  to  Payroll->setup functions for payroll->general factors (in the same 
+  group of Payroll forms), and fill in info and click “Save Changes”, 
+  then the form redraws with the comment “Update Successful” on the top, 
+  and all the values you filled in redrawn.  Why does ‘standard GL accounts’ 
+  not function in that same correct manner?
++ Under Inventory->Setup Functions for Inventory - Markups List is supposed
+  to call invmarkuplist.php but doesn’t come up.
+Go to Purchasing->New Purchase Order. Now, fill out the new PO – then 
+  when you are at the point where you specify how many units to order 
+  from vendor (“itempriceach”.$i in invpoadd.php), and then click ‘Add 
+  line item to PO’, then the price/package SHOULD fill in automatically 
+  (to reflect the correct price break), but it doesn’t.  These vendor 
+  prices exist in another table, so they ARE accessible.
+  
+
+Last update 2003/10/30 15:53 by dcmwai
+- min/max switched in item distribution report
+- Transfer location Bug
+- Upload Graphic and Catalogsheet Fix
+Check Account Didn't really create a check and put in the Database,
+  so The AP is not complete.
+Item Status have some problem, Item Available will be "0" Then there
+  isn't any Item order/Shipped for that particular item.
+Bad path setup on the PDF/CVS Files Export, or All downloadable
+  files. Making people using http://www.example.com/aria/ a sublevel dir
+  cannot see the path.
+Session crash with some php web application that didn't have Session
+  Name setup.
+Complete PO --> AP making a big mistake, aria should be adding 1 x
+  Tax and 1 x shipping charge to GL account but, it add "N" number of
+  time. N is denoted by the Numbers of Item on the Invoice.
+Opening Balance/Closing Not possible yet on current situation.
+
+
+Last update 2003/5/26 17:41 by dcmwai
+- Pdf Print on Apache 2 is not working.
+
+
+Last update 2003/4/28 19:47 by dcmwai
+- Languages Translation Bug Fix invporecv.php
+
+
+Last update 2003/4/15 18:23 by dcmwai
+- Due to The Languages Change, there are some files broken, 
+  below are the know problem Order Add (arordadd.php)
+- Windows Apache running with Binary Packages Php 4.3.1 will 
+  have problem when login. This is mainly cause by the Php Problem, 
+  when ADODB Open and Close MySQL PHP restart and cause the session 
+  fail to register properly. Use PHP 4.2.2 instate.
+- Inventory is Broken

@@ -1,0 +1,25 @@
+Translator Info
+---------------
+
+If you like ARIA, then why not translate it into your native language?
+
+1. Go to the include/lang/ subdirectory
+
+2. Copy 1.php to an  unassigned_number.php
+
+3. Update the comment at the top of the file. Put yourself as the language maintainer.
+   Edit the 'applang' variable and put your language's name in it, in your language.
+   Edit the 'STR_CHAR_SET' variable and put in the name of the encoding for your language.
+
+4. Go through as much of the rest of the file as you wish, replacing the English strings
+   with strings in your language.
+
+5. Send your contribution to us. We need the unassigned_number.php entry in include/lang/.
+
+6. Thank you for your contribution! You have just made ARIA accessible to
+   thousands more users!
+
+7. There exists a tool named 'langcheck' in the include/lang/ directory.  To run it, just type
+   'php langcheck <language_number>'.  It will give you a report about which strings are missing
+   from your language file and which need to be deleted.
+

@@ -1,0 +1,17 @@
+NOLA  MANUAL
+
+I) Overview of purpose and scope of program
+
+II) Interactivity of modules explored
+
+III) Administrative functions
+
+IV) General Ledger
+
+V) Inventory
+
+VI) Receivables
+
+VII) Payables
+
+VIII) Payroll

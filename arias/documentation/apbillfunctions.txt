@@ -1,0 +1,19 @@
+apvendordefaultbilldescription($vendorid) 
+	returns default bill description given a vendor id
+formappaytermsselect($name)
+	echos form for selecting terms
+billadd($invoicenumber,$total,$description,$dateofinvoice,$duedate,$discountamount,$discountdate,$vendorid,$wherefrom,$cancel)
+billupd($id,$invoicenumber,$total,$description,$dateofinvoice,$duedate,$discountamount,$discountdate,$vendorid,$wherefrom,$cancel)
+billdelete($id)
+	cancels bill
+billdetailadd($apbillid,$amount,$glaccountid,$invpodetailid,$invpoqtybill)
+billdeletebyid($id)
+	delete specific bill detail
+billdeletebybillid($apbillid)
+	delete all bill details for a bill id
+billdiscountamount($invoicetermsid,$amount)
+	returns discounted invoice amount given full amount and terms id
+billdiscountdate($invoicetermsid,$dateofinvoice)
+	returns the last day for discount given terms id and dateofinvoice in YYYY-MM-DD
+
+There is no billdetailupd function, because it should be more efficient to delete all details and insert them as new again on a bill update screen.  This makes letting the user remove specific bill details easier

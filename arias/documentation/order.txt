@@ -1,0 +1,43 @@
+//     ORDER FILES:
+
+
+If only one location in the database, skip all location-related questions and default to location=0.
+If only one price level in the database, skip price level questions and default choice to that one.
+
+ARORDER: One record per order. Select price level, inventory location (or all),
+     ordering customer, ship-to address, PO#
+     Auto-assign order number from some pre-defined beginning point
+     Status pre-set at 0 for open.  1 for shipped final, 2 for billed final
+
+
+
+
+ARORDERDETAIL: Any number per order. One inventory item per record
+     Ask Item, Qty, Taxed Y/N (default to customer taxed question),
+     GL sales account (default to customer GL sales account), display
+     calculated item price (use a function call to do calc) but let user over-ride
+
+     When an item is selected, display immediately the available quantity
+     for the given location (or all locations if that was the option selected).
+
+At end of order entry, create a pick ticket that assumes PRINT
+as the normal status of the page. If FTP or similar IMPORT, these print pages
+should probably go to a file until group is processed, then retrieve for print.
+
+Print a bar-code on pick-list page for the order number, and for each of the items on
+the order. If items are pulled from a particular location, it should state that. If there
+is not enough on-hand at a specific location, but maybe at others, it should display
+that info. If not enough on hand it should display that immediately.
+
+Other ARORDER files will be updated later, as shipments made and billing completed.
+
+
+ARORDERTRACK file to contain tracking info about order within plant
+             Action =  0=checkout
+                       10=checkout return
+                       20=fill start
+                       30=fill return
+                       40=part ship
+                       50=full ship
+                       ??=??
+

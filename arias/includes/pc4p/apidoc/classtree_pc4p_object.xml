@@ -1,0 +1,1 @@
+<?xml version="1.0"?><phpdoc><classtree baseclass="pc4p_object"><class name="pc4p_box"></class><class name="pc4p_image"></class><class name="pc4p_table"></class><class name="pc4p_text"></class><class name="pc4p_object"><subclass>pc4p_box</subclass><subclass>pc4p_image</subclass><subclass>pc4p_table</subclass><subclass>pc4p_text</subclass></class></classtree></phpdoc>

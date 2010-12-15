@@ -1,0 +1,17 @@
+README for menu selection
+
+### Introduction ###
+
+ARIA now includes the option of switching between 2 different menu styles. There is the original left/right default menu and now a horizontal/top located menu with drop down sub-menus off each category. The code for the new horizontal menu is authored and copyrighted via Mike Hall at http;//www.brainjar.com. For terms of usage please see http://www.brainjar.com/terms.asp
+
+### Installation ###
+
+Installation of the new menu is only a matter of setting the appropraite numerical value to the correct defines. Please open the file named defines.php located under the /includes directory. Under the "Menu section" of defines.php you will see a line with the follwing field:
+
+define('CSS_MENU','0');
+
+The default is set to "0". To switch to the new horizontal menu all you need to do is change the "0" to "1" and save the file (assuming you have read/write permissions). That's it. Login to ARIA as normal or refresh your browser to view the new menu.
+
+### Usage ###
+
+The current state of the new menu is developmental. Sizing issues must be dealt with to accomodate different screen resolutions. Feel free to contact jflechtner@users.sourceforge.net for fixes or suggestions.

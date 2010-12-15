@@ -1,0 +1,47 @@
+ARIA INSTALL
+------------
+
+1) The following software applications are considered necessary and should be insalled in the following order:
+
+a)	Apache*		http://www.apache.org
+b)	OpenSSL		http://www.openssl.org
+c)	mod_ssl		http://www.modssl.org
+d)	mhash		http://mhash.sourceforge.net/ 
+e)	libmcrypt	http://mcrypt.hellug.gr/
+f)	mcrypt		http://mcrypt.hellug.gr/
+g)	PDFlib		http://www.pdflib.com/
+h)	zlib		http://www.gzip.org/zlib/
+i)  MySQL*      http://www.mysql.com
+j)  PHP*        http://www.php.net
+
+*These applications were more than likely included on your Linux installation. But you should always check before proceeding.
+
+2) Configure you web server's DocumentRoot to be the root of you ARIA installation. ie: if the ARIA installation is in /var/www than the entry in your httpd.conf file would show the following:
+
+	DocumentRoot "/var/www/aria"
+
+   Also make sure that Apache's DirectoryIndex has a "index.php" entry in it.
+
+	DirectoryIndex index.php index.html index.html.var
+
+3) Use the database.sql script under the /setup directory to create the database structure. Your appropriate script will reside in the database name subdirectory under utilities. Assuming that I am using the MySQL database than I would issue the following command under /setup/sqlscripts/MySQL as root user:
+
+	 mysql -p < database.sql
+
+  After creating the database schema go into the appropriate language directory under the database.sql script. Example: /us = english ; /it = italian ; sp = spanish
+
+	 mysql -p < filldata.sql
+
+4) The default MySQL root password is literally a blank field. Do be sure you change this and set your own MySQL root password. Once you have done this make sure to include your new MySQL root in the includesd/my_defines.php file if you plan on connecting ARIA to the MySQL database as root.
+
+5) Be sure the following entry in you php.ini file shows the following:
+
+	register_globals = On 
+	
+   ***This will be changed in the future
+
+6) Some php.ini files may have the short_open_tag set to Off, be sure yours show the following:
+
+	short_open_tag = On
+
+7) You will initially use the username: admin and the password: password to login to ARIA. Do this once and change the password by going into "Admin" in the main menu and then into "User and Rights"
